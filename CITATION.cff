@@ -1,0 +1,30 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Minha Toca Minha Vida
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Julia
+    family-names: Willenbring Deboni
+  - given-names: Diogo
+    family-names: Kurth Vasconcellos Ferreira
+  - given-names: Paulo
+    family-names: Barbato Fogaça de Almeida
+    orcid: 'https://orcid.org/0009-0004-7054-2208'
+    email: paulo.8288330@edu.univali.br
+repository-code: >-
+  https://github.com/pauloBFalmeida/projetoProgramacaoAplicada
+url: >-
+  https://paulobfalmeida.github.io/projetoProgramacaoAplicada/
+abstract: >-
+  Minha Toca Minha Vida is a resource management game based
+  on a boardgame of the same name.
+keywords:
+  - Resource Management
+  - Cozy Games
+  - HyperCasual Games
+license: Apache-2.0
