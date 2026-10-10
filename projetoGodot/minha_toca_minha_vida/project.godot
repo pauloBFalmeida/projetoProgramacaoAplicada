@@ -18,8 +18,8 @@ config/windows_native_icon="res://assets/projeto_icones/icone_win.ico"
 
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=1280
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/extend_to_title=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
