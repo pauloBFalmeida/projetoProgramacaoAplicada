@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://devghcyxloprj"]
 
+[ext_resource type="Script" uid="uid://d226hfux6licv" path="res://cenas/jogo/UI/movimento_camera.gd" id="1_rtvhy"]
+
 [node name="UI" type="CanvasLayer" unique_id=1303200733]
 
 [node name="MovimentoCamera" type="Control" parent="." unique_id=642088271]
@@ -9,3 +11,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rtvhy")
