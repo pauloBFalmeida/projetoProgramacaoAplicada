@@ -2,10 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dri00l5qnrfw0" path="res://cenas/jogo/background/background.tscn" id="1_l68gw"]
 [ext_resource type="Script" uid="uid://bnoekw8wktu7q" path="res://_debug/camera_2d.gd" id="1_teb2g"]
+[ext_resource type="Script" uid="uid://243tft8t5pcl" path="res://cenas/jogo/jogo.gd" id="1_tgo76"]
 [ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="4_teb2g"]
 [ext_resource type="PackedScene" uid="uid://devghcyxloprj" path="res://cenas/jogo/UI/ui_jogo.tscn" id="6_0qu2t"]
 
 [node name="Jogo" type="Node" unique_id=1130431866]
+script = ExtResource("1_tgo76")
 
 [node name="Mundo" type="Node2D" parent="." unique_id=1311568129]
 
@@ -20,6 +22,12 @@ limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 script = ExtResource("1_teb2g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mundo/Camera2D" unique_id=474159871]
+modulate = Color(0.5083332, 0.5, 1, 0.39607844)
+scale = Vector2(5, 2.807)
+texture = ExtResource("4_teb2g")
+centered = false
 
 [node name="UI" parent="." unique_id=1303200733 instance=ExtResource("6_0qu2t")]
 

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dri00l5qnrfw0"]
 
+[ext_resource type="Script" uid="uid://sq1oh7lic2ep" path="res://cenas/jogo/background/background.gd" id="1_7yi0p"]
 [ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="1_xtbmu"]
 [ext_resource type="Texture2D" uid="uid://rqe66j8kyk24" path="res://_debug/tempo_assets/tile_ceu.png" id="2_7yi0p"]
 [ext_resource type="Texture2D" uid="uid://j2tkgw53gjur" path="res://_debug/tempo_assets/tile_chao.png" id="3_ywmka"]
@@ -33,6 +34,7 @@ sources/2 = SubResource("TileSetAtlasSource_55c18")
 sources/3 = SubResource("TileSetAtlasSource_k85cr")
 
 [node name="Background" type="Node2D" unique_id=1396030159]
+script = ExtResource("1_7yi0p")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=141625300]
 scale = Vector2(0.25, 0.25)

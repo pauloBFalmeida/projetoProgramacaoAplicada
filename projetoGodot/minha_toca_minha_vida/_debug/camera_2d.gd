@@ -20,6 +20,8 @@ func mover(direcao: Vector2) -> void:
 	position += direcao / zoom
 	_limitar_posicao()
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d_scale: Vector2 = sprite_2d.scale
 func zoom_posicao(fator_zoom: float, pos_tela: Vector2) -> void:
 	var zoom_antigo := zoom.x
 	var zoom_novo := clampf(zoom_antigo * fator_zoom, min_zoom, max_zoom)
@@ -30,6 +32,7 @@ func zoom_posicao(fator_zoom: float, pos_tela: Vector2) -> void:
 	position += offset / zoom_antigo - offset / zoom_novo
 	
 	zoom = Vector2.ONE * zoom_novo
+	sprite_2d.scale = sprite_2d_scale / zoom
 
 
 func _limitar_posicao() -> void:
