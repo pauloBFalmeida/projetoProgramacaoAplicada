@@ -27,6 +27,7 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://_debug/": "gray",
 "res://assets/": "red",
 "res://cenas/": "orange",
 "res://cenas/menus/": "yellow",
