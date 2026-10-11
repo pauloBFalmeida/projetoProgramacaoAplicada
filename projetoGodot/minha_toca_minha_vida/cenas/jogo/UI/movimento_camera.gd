@@ -1,15 +1,14 @@
 class_name MovimentoCamera
 extends Control
 
-@export var camera: Camera2D
+@export var camera: CameraJogo
 @export var sensibilidade := 1.0
 
-@export var min_zoom := 1.0
-@export var max_zoom := 2.0
 @export var wheel_zoom_factor := 1.1
 
-
+## Posicoes do touch (locais ao nodo) por indice do toque
 var pos_por_touche_id := {}
+
 var last_dist := 0.0
 var last_meio := Vector2.ZERO
 var mouse_dragging := false
@@ -33,9 +32,9 @@ func _input_mouse(event: InputEvent) -> void:
 			MOUSE_BUTTON_LEFT:
 				mouse_dragging = event.pressed
 			MOUSE_BUTTON_WHEEL_UP:
-				_zoom_posicao(event.position, wheel_zoom_factor)
+				_zoom_posicao(wheel_zoom_factor, event.global_position)
 			MOUSE_BUTTON_WHEEL_DOWN:
-				_zoom_posicao(event.position, 1.0 / wheel_zoom_factor)
+				_zoom_posicao(1.0 / wheel_zoom_factor, event.global_position)
 		
 		accept_event()
 
@@ -77,12 +76,12 @@ func _atualizar_touch() -> void:
 		last_dist = 0.0
 
 func _update_pinch() -> void:
-	var pts := pos_por_touche_id.values()
-	var dist: float = pts[0].distance_to(pts[1])
-	var meio: Vector2 = (pts[0] + pts[1]) / 2.0
+	var posicoes := pos_por_touche_id.values()
+	var dist: float = posicoes[0].distance_to(posicoes[1])
+	var meio: Vector2 = (posicoes[0] + posicoes[1]) / 2.0
 	if last_dist > 0.0:
 		_mover_camera(meio - last_meio)
-		_zoom_posicao(meio, dist / last_dist)
+		_zoom_posicao(dist / last_dist, meio)
 	last_dist = dist
 	last_meio = meio
 
@@ -90,12 +89,7 @@ func _update_pinch() -> void:
 # ------------------------------------------------------------------------------
 
 func _mover_camera(relative: Vector2) -> void:
-	camera.position -= relative / camera.zoom
+	camera.mover(-relative)
 
-func _zoom_posicao(focus: Vector2, factor: float) -> void:
-	var old_zoom := camera.zoom.x
-	var new_zoom := clampf(old_zoom * factor, min_zoom, max_zoom)
-	# Keep the world point under the focus fixed on screen
-	var offset := focus + global_position - get_viewport_rect().size / 2.0
-	camera.position += offset / old_zoom - offset / new_zoom
-	camera.zoom = Vector2.ONE * new_zoom
+func _zoom_posicao(fator_zoom: float, global_pos_meio: Vector2) -> void:
+	camera.zoom_posicao(fator_zoom, global_pos_meio)
