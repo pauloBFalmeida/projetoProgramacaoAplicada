@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bnoekw8wktu7q" path="res://_debug/camera_2d.gd" id="1_teb2g"]
 [ext_resource type="Script" uid="uid://243tft8t5pcl" path="res://cenas/jogo/jogo.gd" id="1_tgo76"]
 [ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="4_teb2g"]
+[ext_resource type="PackedScene" uid="uid://bu3d75pl2esmy" path="res://cenas/jogo/comodos/grid_comodos.tscn" id="5_0xxu0"]
 [ext_resource type="PackedScene" uid="uid://devghcyxloprj" path="res://cenas/jogo/UI/ui_jogo.tscn" id="6_0qu2t"]
+[ext_resource type="PackedScene" uid="uid://dvqy4auvlk8jy" path="res://cenas/jogo/comodos/comodo_base.tscn" id="6_0xxu0"]
 
 [node name="Jogo" type="Node" unique_id=1130431866]
 script = ExtResource("1_tgo76")
@@ -29,10 +31,19 @@ scale = Vector2(5, 2.807)
 texture = ExtResource("4_teb2g")
 centered = false
 
+[node name="GridComodos" parent="Mundo" unique_id=1603842377 instance=ExtResource("5_0xxu0")]
+
+[node name="ComodoQuarto" parent="Mundo/GridComodos/PosIni" parent_id_path=PackedInt32Array(1603842377, 1141383617) index="0" unique_id=1375274025 instance=ExtResource("6_0xxu0")]
+
+[node name="ComodoQuarto" parent="Mundo/GridComodos/PosEndX" parent_id_path=PackedInt32Array(1603842377, 1798159814) index="0" unique_id=327365360 instance=ExtResource("6_0xxu0")]
+
+[node name="ComodoQuarto" parent="Mundo/GridComodos/PosNextY" parent_id_path=PackedInt32Array(1603842377, 786585999) index="0" unique_id=1231261065 instance=ExtResource("6_0xxu0")]
+
 [node name="UI" parent="." unique_id=1303200733 instance=ExtResource("6_0qu2t")]
 
 [node name="MovimentoCamera" parent="UI" index="0" unique_id=642088271 node_paths=PackedStringArray("camera")]
 camera = NodePath("../../Mundo/Camera2D")
 wheel_zoom_factor = 1.05
 
+[editable path="Mundo/GridComodos"]
 [editable path="UI"]

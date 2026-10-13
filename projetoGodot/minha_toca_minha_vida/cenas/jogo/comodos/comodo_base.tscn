@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dvqy4auvlk8jy"]
+
+[ext_resource type="Texture2D" uid="uid://dgdmnr2vhr7hl" path="res://assets/artes/comodos/resized_comodo_alquimia.png" id="1_oon6u"]
+[ext_resource type="Script" uid="uid://pdt3mmmyjx4r" path="res://cenas/jogo/comodos/comodo_base.gd" id="1_w7gib"]
+[ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="2_ii1wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
+size = Vector2(198, 188)
+
+[node name="ComodoBase" type="Node2D" unique_id=1038744729]
+script = ExtResource("1_w7gib")
+
+[node name="SpriteBorda" type="Sprite2D" parent="." unique_id=603487697]
+self_modulate = Color(1, 1, 1, 0.9411765)
+show_behind_parent = true
+scale = Vector2(0.7734375, 0.734375)
+texture = ExtResource("2_ii1wo")
+
+[node name="SpriteComodo" type="Sprite2D" parent="." unique_id=1375274025]
+z_index = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_oon6u")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1769575865]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=776907859]
+shape = SubResource("RectangleShape2D_smq05")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

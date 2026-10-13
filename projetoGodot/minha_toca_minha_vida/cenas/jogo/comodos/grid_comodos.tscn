@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bu3d75pl2esmy"]
+
+[ext_resource type="Script" uid="uid://c25cdlo0067i2" path="res://cenas/jogo/comodos/grid_comodos.gd" id="1_jbsnu"]
+
+[node name="GridComodos" type="Node2D" unique_id=1603842377 node_paths=PackedStringArray("pos_ini", "pos_end_x", "pos_next_y")]
+script = ExtResource("1_jbsnu")
+pos_ini = NodePath("PosIni")
+pos_end_x = NodePath("PosEndX")
+pos_next_y = NodePath("PosNextY")
+
+[node name="PosIni" type="Node2D" parent="." unique_id=1141383617]
+position = Vector2(125, 125)
+
+[node name="PosEndX" type="Node2D" parent="." unique_id=1798159814]
+position = Vector2(1155, 125)
+
+[node name="PosNextY" type="Node2D" parent="." unique_id=786585999]
+position = Vector2(125, 350)
