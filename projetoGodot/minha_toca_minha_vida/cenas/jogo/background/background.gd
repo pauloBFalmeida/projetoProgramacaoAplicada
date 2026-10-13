@@ -2,7 +2,7 @@ class_name Background
 extends Node2D
 
 ## Quantidade de linhas de tiles extras alem da global_pos_final 
-@export var tiles_extras_vert := 3
+@export var tiles_extras_vertical := 6
 ## Quantidade de colunas de tiles extras para cada da tela
 @export var tiles_extras_laterais := 3
 
@@ -15,12 +15,15 @@ var screensize : Vector2i
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
 func _ready() -> void:
-	screensize = get_viewport().size
+	get_tree().root.size_changed.connect(_on_window_resized)
+	_on_window_resized()
 	
 	var tile_final := tile_map_layer.local_to_map(tile_map_layer.to_local(screensize))
 	tile_pos_laterais_ini = - tiles_extras_laterais
 	tile_pos_laterais_fim = tile_final.x + tiles_extras_laterais
-	
+
+func _on_window_resized() -> void:
+	screensize = get_viewport().size
 
 func aumentar_ate_cam(global_pos_cam: Vector2) -> void:
 	global_pos_cam.y += screensize.y
@@ -35,7 +38,7 @@ func aumentar_ate(global_pos: Vector2) -> void:
 	var linha : int = tile_pos.y
 	var linha_final : int = tile_pos_final.y
 	
-	for y in range(linha_final+tiles_extras_vert, linha+tiles_extras_vert):
+	for y in range(linha_final+tiles_extras_vertical, linha+tiles_extras_vertical):
 		for x in range(tile_pos_laterais_ini, tile_pos_laterais_fim):
 			var tile := Vector2(x, y)
 			tile_map_layer.set_cell(tile, 2, Vector2i.ZERO)
