@@ -40,6 +40,6 @@ func _criar_grid() -> void:
 			grid[Vector2i(x,y)] = posicao
 			var comodo := COMODO_BASE.instantiate() as ComodoBase
 			posicao.add_child(comodo)
-			if x > 0 and x < 4 and y == 0:
+			if x == 2 and y == 0:
 				comodo.piscar_clicavel()
 			

@@ -28,6 +28,7 @@ custom_minimum_size = Vector2(172, 0)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ypvnr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_32vai")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_5gkso")
+action_mode = 0
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("2_jjaqy")

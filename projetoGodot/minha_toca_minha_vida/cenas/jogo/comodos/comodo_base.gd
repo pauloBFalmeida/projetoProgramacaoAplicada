@@ -10,8 +10,7 @@ func _ready() -> void:
 	esconder()
 
 func piscar_clicavel() -> void:
-	area_2d.monitoring = true
-	area_2d.monitorable = false
+	area_2d.monitorable = true
 	
 	sprite_comodo.hide()
 	sprite_borda.show()
@@ -23,19 +22,19 @@ func piscar_clicavel() -> void:
 	tween.set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(
 		sprite_borda, "modulate:a",
-		0.4, 2.0
+		0.4, 1.5
 	)
 	tween.tween_property(
 		sprite_borda, "modulate:a",
-		0.2, 2.0
+		0.1, 1.5
 	)
 
 func esconder() -> void:
-	#area_2d.monitoring = false
-	#area_2d.monitorable = false
+	area_2d.monitorable = false
 	sprite_comodo.hide()
 	sprite_borda.hide()
 
 func mostrar_comodo() -> void:
+	area_2d.monitorable = false
 	sprite_comodo.show()
 	sprite_borda.modulate.a = 1.0

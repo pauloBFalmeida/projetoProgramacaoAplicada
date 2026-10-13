@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://d226hfux6licv" path="res://cenas/jogo/UI/movimento_camera.gd" id="1_rtvhy"]
 [ext_resource type="PackedScene" uid="uid://bt4hb2p4wi1so" path="res://cenas/jogo/UI/carta_comodo/button_comodo.tscn" id="2_s4l40"]
 [ext_resource type="Script" uid="uid://c03d3bjbg1qvm" path="res://cenas/jogo/UI/escolha_comodos.gd" id="2_ypvnr"]
+[ext_resource type="Texture2D" uid="uid://cuvmdafmqklo7" path="res://assets/artes/comodos/resized_comodo_cafeteria.png" id="4_o7w4a"]
+[ext_resource type="Texture2D" uid="uid://d3l0ir0sf2hvx" path="res://assets/artes/comodos/resized_comodo_igreja.png" id="5_rsqol"]
 
 [node name="UI" type="CanvasLayer" unique_id=1303200733]
 
@@ -47,5 +49,17 @@ layout_mode = 2
 [node name="ButtonComodo2" parent="EscolhaComodos/HBox" unique_id=1062244610 instance=ExtResource("2_s4l40")]
 layout_mode = 2
 
+[node name="TextureRectComodo" parent="EscolhaComodos/HBox/ButtonComodo2" index="0" unique_id=854287253]
+texture = ExtResource("4_o7w4a")
+
 [node name="ButtonComodo3" parent="EscolhaComodos/HBox" unique_id=503860771 instance=ExtResource("2_s4l40")]
 layout_mode = 2
+
+[node name="TextureRectComodo" parent="EscolhaComodos/HBox/ButtonComodo3" index="0" unique_id=854287253]
+texture = ExtResource("5_rsqol")
+
+[connection signal="gui_input" from="EscolhaComodos/HBox" to="EscolhaComodos" method="_on_h_box_gui_input"]
+
+[editable path="EscolhaComodos/HBox/ButtonComodo"]
+[editable path="EscolhaComodos/HBox/ButtonComodo2"]
+[editable path="EscolhaComodos/HBox/ButtonComodo3"]
