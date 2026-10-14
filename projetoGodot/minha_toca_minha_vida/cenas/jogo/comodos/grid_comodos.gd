@@ -15,6 +15,8 @@ const COMODO_BASE = preload("uid://dvqy4auvlk8jy")
 
 var grid : Dictionary[Vector2i, Node2D] = {}
 
+var comodos : Array[ComodoBase] = []
+
 func _ready() -> void:
 	_pos_ini = pos_ini.global_position
 	_pos_end_x = pos_end_x.global_position
@@ -39,7 +41,14 @@ func _criar_grid() -> void:
 			)
 			grid[Vector2i(x,y)] = posicao
 			var comodo := COMODO_BASE.instantiate() as ComodoBase
+			comodos.append(comodo)
 			posicao.add_child(comodo)
 			if x == 2 and y == 0:
 				comodo.piscar_clicavel()
 			
+
+func pegar_comodo(area: Area2D) -> ComodoBase:
+	for comodo : ComodoBase in comodos:
+		if comodo.area_2d == area:
+			return comodo
+	return null

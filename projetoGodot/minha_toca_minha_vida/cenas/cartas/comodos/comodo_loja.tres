@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://c51vlos7jb14t"]
+
+[ext_resource type="Texture2D" uid="uid://cndlqh2fhy86e" path="res://assets/artes/comodos/resized_comodo_loja.png" id="1_d75n3"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_h0eoj"]
+
+[resource]
+script = ExtResource("2_h0eoj")
+nome = "Loja"
+imagem = ExtResource("1_d75n3")
+metadata/_custom_type_script = "uid://t5e33585bkg7"

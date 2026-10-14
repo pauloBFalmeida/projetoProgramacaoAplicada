@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://xsse3gj2oavy"]
 
-[ext_resource type="Script" uid="uid://bqlwl0vc7bbv7" path="res://cenas/jogo/UI/comodo_pego.gd" id="1_7njl8"]
-[ext_resource type="Texture2D" uid="uid://d3l0ir0sf2hvx" path="res://assets/artes/comodos/resized_comodo_igreja.png" id="2_xvfdt"]
+[ext_resource type="Script" uid="uid://bqlwl0vc7bbv7" path="res://cenas/jogo/UI/carta_comodo/carta_segurada.gd" id="1_1anjc"]
+[ext_resource type="Texture2D" uid="uid://d3l0ir0sf2hvx" path="res://assets/artes/comodos/resized_comodo_igreja.png" id="2_07x2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
 size = Vector2(188, 180)
 
-[node name="ComodoPego" type="CharacterBody2D" unique_id=501242608]
+[node name="CartaSegurada" type="CharacterBody2D" unique_id=501242608]
+z_index = 5
 collision_layer = 8
 collision_mask = 4
 motion_mode = 1
-script = ExtResource("1_7njl8")
+script = ExtResource("1_1anjc")
 
 [node name="SpriteComodo" type="Sprite2D" parent="." unique_id=1540883753]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_xvfdt")
+texture = ExtResource("2_07x2a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630645356]
 shape = SubResource("RectangleShape2D_smq05")

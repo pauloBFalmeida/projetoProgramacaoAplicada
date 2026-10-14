@@ -1,4 +1,4 @@
-class_name ComodoPego
+class_name CartaSegurada
 extends CharacterBody2D
 
 signal solto_em_area(area: Area2D)
@@ -35,13 +35,13 @@ func _soltar() -> void:
 	
 	var area := _area_sob_ponto(global_position)
 	if area:
-		# encaixa no slot
-		global_position = area.global_position
+		 #encaixa no slot
+		#global_position = area.global_position
 		solto_em_area.emit(area)
 	else:
 		# se for fora, nao faca nada 
 		solto_fora.emit()
-		queue_free()
+		#queue_free()
 
 ## Pega a area em baixo do local que a carta esta
 func _area_sob_ponto(pos: Vector2) -> Area2D:
