@@ -43,8 +43,8 @@ func _criar_grid() -> void:
 			var comodo := COMODO_BASE.instantiate() as ComodoBase
 			comodos.append(comodo)
 			posicao.add_child(comodo)
-			if x == 2 and y == 0:
-				comodo.piscar_clicavel()
+			#if x == 2 and y == 0:
+			comodo.piscar_clicavel()
 			
 
 func pegar_comodo(area: Area2D) -> ComodoBase:

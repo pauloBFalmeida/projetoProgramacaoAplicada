@@ -5,7 +5,7 @@ signal carta_colocada(area: Area2D, textura: Texture2D)
 
 @export var mundo: Node2D
 
-@onready var h_box: HBoxContainer = $HBox
+@onready var h_box_cartas: HBoxContainer = %HBoxCartas
 
 var cartas_button_lista : Array[CartaButton] = []
 var carta_button_por_carta_pega : Dictionary[CartaSegurada, CartaButton] = {}
@@ -17,13 +17,14 @@ const COMODO_LOJA = preload("uid://c51vlos7jb14t")
 const COMODO_QUARTO = preload("uid://b8knkgyshgpca")
 
 func _ready() -> void:
-	for carta_res in [COMODO_LOJA, COMODO_QUARTO, COMODO_LOJA, COMODO_QUARTO]:
-		adicionar_carta(carta_res)
+	for i in range(10):
+		for carta_res in [COMODO_LOJA, COMODO_QUARTO, COMODO_LOJA, COMODO_QUARTO]:
+			adicionar_carta(carta_res)
 
 func adicionar_carta(carta_res: CartaRes) -> void:
 	var carta_button := CARTA_BUTTON.instantiate() as CartaButton
 	cartas_button_lista.append(carta_button)
-	h_box.add_child(carta_button)
+	h_box_cartas.add_child(carta_button)
 	
 	carta_button.set_textura_comodo(carta_res.imagem)
 	carta_button.pressed.connect(_pegar_carta.bind(carta_button))
