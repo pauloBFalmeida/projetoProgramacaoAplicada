@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://dhc2fwmqbb7kx" path="res://cenas/cartas/comodos/comodo_horta.tres" id="12_pah55"]
 [ext_resource type="Resource" uid="uid://1te4rq5sl13o" path="res://cenas/cartas/comodos/comodo_igreja.tres" id="13_4mm4d"]
 [ext_resource type="Resource" uid="uid://c51vlos7jb14t" path="res://cenas/cartas/comodos/comodo_loja.tres" id="14_i8ngi"]
-[ext_resource type="Resource" uid="uid://cx4wbnf0yq1qv" path="res://cenas/cartas/comodos/comodo_madereira.tres" id="15_vo86p"]
+[ext_resource type="Resource" uid="uid://cx4wbnf0yq1qv" path="res://cenas/cartas/comodos/comodo_madeireira.tres" id="15_vo86p"]
 [ext_resource type="Resource" uid="uid://0sknbjuqg8tc" path="res://cenas/cartas/comodos/comodo_mina.tres" id="16_v8a2t"]
 [ext_resource type="Resource" uid="uid://ftv2eui5vgvy" path="res://cenas/cartas/comodos/comodo_papelaria.tres" id="17_t5kkn"]
 [ext_resource type="Resource" uid="uid://b8knkgyshgpca" path="res://cenas/cartas/comodos/comodo_quarto.tres" id="18_fbxke"]
