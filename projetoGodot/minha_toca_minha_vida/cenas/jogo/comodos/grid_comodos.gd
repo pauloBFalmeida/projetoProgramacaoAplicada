@@ -15,6 +15,7 @@ const COMODO_BASE = preload("uid://dvqy4auvlk8jy")
 
 var comodos_grid : Dictionary[ComodoBase, Vector2i] = {}
 
+@onready var adm_grafo_comodos: AdmGrafoComodos = $"../../AdmGrafoComodos"
 
 func _ready() -> void:
 	_pos_ini = pos_ini.global_position
@@ -24,6 +25,21 @@ func _ready() -> void:
 	for c in get_children(): c.queue_free()
 	
 	_criar_grid()
+	
+	# teste
+	adm_grafo_comodos.grafo.atualizado.connect(_grafo_atualizado)
+
+const LABEL_COMODO = preload("uid://c0k70trmmotlh")
+
+func _grafo_atualizado() -> void:
+	for comodo: ComodoBase in comodos_grid.keys():
+		var c := comodo.get_child(-1)
+		if c is Label: c.queue_free()
+		
+		var pos := comodos_grid[comodo]
+		var label := LABEL_COMODO.instantiate()
+		label.text = "Moradia=%d" % adm_grafo_comodos.grafo.quantidade(pos, GerenciadorRecursos.Recurso.MORADIA)
+		comodo.add_child(label)
 
 # cria a grid
 func _criar_grid() -> void:
