@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7", "Mobile")
 config/icon="uid://dn888543toxf3"
 config/windows_native_icon="res://assets/projeto_icones/icone_win.ico"
 
+[autoload]
+
+GerenciadorRecursos="*uid://bxlepoft2n00h"
+
 [display]
 
 window/size/viewport_width=1280
