@@ -4,7 +4,7 @@ extends Node
 @onready var background: Background = $Mundo/Background
 @onready var camera_2d: Camera2D = $Mundo/Camera2D
 
-@onready var escolha_cartas: EscolhaCartas = $UI/EscolhaCartas
+@onready var escolha_cartas: EscolhaCartas = $UI/MenuCartas/EscolhaCartas
 @onready var grid_comodos: GridComodos = $Mundo/GridComodos
 
 func _process(delta: float) -> void:

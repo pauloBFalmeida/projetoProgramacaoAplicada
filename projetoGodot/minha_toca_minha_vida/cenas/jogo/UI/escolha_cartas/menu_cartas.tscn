@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ckpuwpe50du0o"]
+
+[ext_resource type="Script" uid="uid://c03d3bjbg1qvm" path="res://cenas/jogo/UI/escolha_cartas/escolha_comodos.gd" id="1_6tfrl"]
+[ext_resource type="Script" uid="uid://7qwttqvdascb" path="res://cenas/jogo/UI/escolha_cartas/toggle_menu.gd" id="2_a0stl"]
+[ext_resource type="Shader" uid="uid://cjgtevb26fyl3" path="res://cenas/jogo/UI/escolha_cartas/ui_canto_redondo.gdshader" id="3_70r0q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hevb"]
+shader = ExtResource("3_70r0q")
+shader_parameter/radius_top = 16.0
+shader_parameter/radius_bottom = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4l40"]
+shader = ExtResource("3_70r0q")
+shader_parameter/radius_top = 16.0
+shader_parameter/radius_bottom = 0.0
+
+[node name="MenuCartas" type="Control" unique_id=2104424329]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -180.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="EscolhaCartas" type="MarginContainer" parent="." unique_id=1321526808]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.0005340576
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_6tfrl")
+
+[node name="Base" type="Control" parent="EscolhaCartas" unique_id=1030022273]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ToggleMenu" type="Control" parent="EscolhaCartas" unique_id=306083771 node_paths=PackedStringArray("escolha_cartas", "base")]
+modulate = Color(0, 0, 0, 0.29411766)
+layout_mode = 2
+script = ExtResource("2_a0stl")
+escolha_cartas = NodePath("..")
+base = NodePath("../Base")
+
+[node name="ColorRect" type="ColorRect" parent="EscolhaCartas/ToggleMenu" unique_id=298300367]
+material = SubResource("ShaderMaterial_5hevb")
+layout_mode = 0
+offset_left = -32.0
+offset_top = -18.0
+offset_right = 912.0
+offset_bottom = 177.0
+
+[node name="ColorRectButton" type="ColorRect" parent="EscolhaCartas/ToggleMenu" unique_id=527685582]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_s4l40")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = -54.0
+offset_right = 64.0
+offset_bottom = -17.0
+grow_horizontal = 2
+
+[node name="LabelToggleMenu" type="Label" parent="EscolhaCartas/ToggleMenu/ColorRectButton" unique_id=2060991111]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "\\/"
+horizontal_alignment = 1
+
+[node name="ButtonToggleMenu" type="Button" parent="EscolhaCartas/ToggleMenu/ColorRectButton" unique_id=1449324486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="EscolhaCartas" unique_id=1683742245]
+layout_mode = 2
+
+[node name="HBoxCartas" type="HBoxContainer" parent="EscolhaCartas/ScrollContainer" unique_id=991072444]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[connection signal="pressed" from="EscolhaCartas/ToggleMenu/ColorRectButton/ButtonToggleMenu" to="EscolhaCartas/ToggleMenu" method="_on_button_toggle_menu_pressed"]
+[connection signal="gui_input" from="EscolhaCartas/ScrollContainer/HBoxCartas" to="EscolhaCartas" method="_on_h_box_gui_input"]

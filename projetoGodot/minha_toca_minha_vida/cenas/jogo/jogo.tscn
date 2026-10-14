@@ -25,7 +25,8 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 script = ExtResource("1_teb2g")
 
-[node name="Sprite2D" type="Sprite2D" parent="Mundo/Camera2D" unique_id=474159871]
+[node name="Sprite2DDEBUG" type="Sprite2D" parent="Mundo/Camera2D" unique_id=474159871]
+visible = false
 modulate = Color(0.5083332, 0.5, 1, 0.39607844)
 scale = Vector2(5, 2.807)
 texture = ExtResource("4_teb2g")
@@ -45,8 +46,8 @@ centered = false
 camera = NodePath("../../Mundo/Camera2D")
 wheel_zoom_factor = 1.05
 
-[node name="EscolhaCartas" parent="UI" index="1" unique_id=1542617890 node_paths=PackedStringArray("mundo")]
-mundo = NodePath("../../Mundo")
+[node name="EscolhaCartas" parent="UI/MenuCartas" parent_id_path=PackedInt32Array(1303200733, 2100751092) index="0" unique_id=2025154282 node_paths=PackedStringArray("mundo")]
+mundo = NodePath("../../../Mundo")
 
 [editable path="Mundo/GridComodos"]
 [editable path="UI"]

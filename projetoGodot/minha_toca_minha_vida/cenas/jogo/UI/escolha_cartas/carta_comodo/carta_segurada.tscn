@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xsse3gj2oavy"]
 
-[ext_resource type="Script" uid="uid://bqlwl0vc7bbv7" path="res://cenas/jogo/UI/carta_comodo/carta_segurada.gd" id="1_1anjc"]
+[ext_resource type="Script" uid="uid://bqlwl0vc7bbv7" path="res://cenas/jogo/UI/escolha_cartas/carta_comodo/carta_segurada.gd" id="1_1anjc"]
 [ext_resource type="Texture2D" uid="uid://d3l0ir0sf2hvx" path="res://assets/artes/comodos/resized_comodo_igreja.png" id="2_07x2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
