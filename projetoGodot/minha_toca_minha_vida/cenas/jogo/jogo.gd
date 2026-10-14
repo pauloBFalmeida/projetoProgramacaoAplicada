@@ -4,6 +4,8 @@ extends Node
 @onready var background: Background = $Mundo/Background
 @onready var camera_2d: Camera2D = $Mundo/Camera2D
 
+@onready var adm_grafo_comodos: AdmGrafoComodos = $AdmGrafoComodos
+
 @onready var escolha_cartas: EscolhaCartas = $UI/MenuCartas/EscolhaCartas
 @onready var grid_comodos: GridComodos = $Mundo/GridComodos
 
@@ -25,3 +27,6 @@ func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 		var textura: Texture2D = carta.imagem
 		comodo.set_textura_comodo(textura)
 		comodo.mostrar_comodo()
+		
+		var pos_grid: Vector2i = grid_comodos.get_grid_pos(comodo)
+		adm_grafo_comodos.colocar_comodo(carta, pos_grid)

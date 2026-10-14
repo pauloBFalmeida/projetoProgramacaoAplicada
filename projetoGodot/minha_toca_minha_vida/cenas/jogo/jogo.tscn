@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dri00l5qnrfw0" path="res://cenas/jogo/background/background.tscn" id="1_l68gw"]
 [ext_resource type="Script" uid="uid://bnoekw8wktu7q" path="res://_debug/camera_2d.gd" id="1_teb2g"]
 [ext_resource type="Script" uid="uid://243tft8t5pcl" path="res://cenas/jogo/jogo.gd" id="1_tgo76"]
+[ext_resource type="Script" uid="uid://b7tpplg13c8ly" path="res://cenas/jogo/sistemas/adm_grafo_comodos.gd" id="2_7mv33"]
 [ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="4_teb2g"]
 [ext_resource type="PackedScene" uid="uid://bu3d75pl2esmy" path="res://cenas/jogo/comodos/grid_comodos.tscn" id="5_0xxu0"]
 [ext_resource type="PackedScene" uid="uid://devghcyxloprj" path="res://cenas/jogo/UI/ui_jogo.tscn" id="6_0qu2t"]
@@ -10,6 +11,9 @@
 
 [node name="Jogo" type="Node" unique_id=1130431866]
 script = ExtResource("1_tgo76")
+
+[node name="AdmGrafoComodos" type="Node" parent="." unique_id=1927304231]
+script = ExtResource("2_7mv33")
 
 [node name="Mundo" type="Node2D" parent="." unique_id=1311568129]
 
