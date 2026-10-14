@@ -13,14 +13,6 @@ var carta_button_por_carta_pega : Dictionary[CartaSegurada, CartaButton] = {}
 const COMODO_PEGO = preload("uid://xsse3gj2oavy")
 const CARTA_BUTTON = preload("uid://bt4hb2p4wi1so")
 
-const COMODO_LOJA = preload("uid://c51vlos7jb14t")
-const COMODO_QUARTO = preload("uid://b8knkgyshgpca")
-
-func _ready() -> void:
-	for i in range(10):
-		for carta_res in [COMODO_LOJA, COMODO_QUARTO, COMODO_LOJA, COMODO_QUARTO]:
-			adicionar_carta(carta_res)
-
 func adicionar_carta(carta_res: CartaRes) -> void:
 	var carta_button := CARTA_BUTTON.instantiate() as CartaButton
 	cartas_button_lista.append(carta_button)
