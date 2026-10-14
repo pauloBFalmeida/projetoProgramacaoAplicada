@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://cbw8q6ekh4tqd"]
+
+[ext_resource type="Texture2D" uid="uid://cwkwcsmkvukbm" path="res://assets/artes/comodos/resized_comodo_sala.png" id="1_h0woh"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_co6lm"]
+
+[resource]
+script = ExtResource("2_co6lm")
+nome = "Sala"
+imagem = ExtResource("1_h0woh")
+recurso_gerado = 2
+metadata/_custom_type_script = "uid://t5e33585bkg7"

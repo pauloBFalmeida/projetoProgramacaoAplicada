@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://cv3nwdoqwt1wo"]
+
+[ext_resource type="Texture2D" uid="uid://dgdmnr2vhr7hl" path="res://assets/artes/comodos/resized_comodo_alquimia.png" id="1_jydp8"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_nglh1"]
+
+[resource]
+script = ExtResource("2_nglh1")
+nome = "Alquimia"
+imagem = ExtResource("1_jydp8")
+recurso_gerado = 1
+metadata/_custom_type_script = "uid://t5e33585bkg7"

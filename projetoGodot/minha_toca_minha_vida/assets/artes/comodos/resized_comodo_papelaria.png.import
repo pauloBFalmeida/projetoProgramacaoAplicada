@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn4nc3jsraelc"
-path="res://.godot/imported/resized_comodo_crafts.png-fe1f3a35920c8dc0d27a74dcab1da268.ctex"
+path="res://.godot/imported/resized_comodo_papelaria.png-4e5ebba1e313a17d63140616864241cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/artes/comodos/resized_comodo_crafts.png"
-dest_files=["res://.godot/imported/resized_comodo_crafts.png-fe1f3a35920c8dc0d27a74dcab1da268.ctex"]
+source_file="res://assets/artes/comodos/resized_comodo_papelaria.png"
+dest_files=["res://.godot/imported/resized_comodo_papelaria.png-4e5ebba1e313a17d63140616864241cb.ctex"]
 
 [params]
 

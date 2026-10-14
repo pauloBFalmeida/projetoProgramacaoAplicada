@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://d2nst0wiqws11"]
+
+[ext_resource type="Texture2D" uid="uid://do80lmofqc1q8" path="res://assets/artes/comodos/resized_comodo_feira.png" id="1_3a61g"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_rv7fo"]
+
+[resource]
+script = ExtResource("2_rv7fo")
+nome = "Feira"
+imagem = ExtResource("1_3a61g")
+recurso_gerado = 1
+metadata/_custom_type_script = "uid://t5e33585bkg7"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://1te4rq5sl13o"]
+
+[ext_resource type="Texture2D" uid="uid://d3l0ir0sf2hvx" path="res://assets/artes/comodos/resized_comodo_igreja.png" id="1_2cctq"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_lwyo1"]
+
+[resource]
+script = ExtResource("2_lwyo1")
+nome = "Templo"
+imagem = ExtResource("1_2cctq")
+recurso_gerado = 2
+metadata/_custom_type_script = "uid://t5e33585bkg7"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://fe88dl7mlhjp"]
+
+[ext_resource type="Texture2D" uid="uid://xjsbpvk7lts4" path="res://assets/artes/comodos/resized_comodo_escola.png" id="1_s2g7g"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_qtmms"]
+
+[resource]
+script = ExtResource("2_qtmms")
+nome = "Escola"
+imagem = ExtResource("1_s2g7g")
+recurso_gerado = 2
+metadata/_custom_type_script = "uid://t5e33585bkg7"

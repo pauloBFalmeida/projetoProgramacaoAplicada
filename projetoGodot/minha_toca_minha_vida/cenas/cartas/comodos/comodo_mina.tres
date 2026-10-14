@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://0sknbjuqg8tc"]
+
+[ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="1_th6xq"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_1p2p1"]
+
+[resource]
+script = ExtResource("2_1p2p1")
+nome = "Mina"
+imagem = ExtResource("1_th6xq")
+recurso_gerado = 4
+metadata/_custom_type_script = "uid://t5e33585bkg7"

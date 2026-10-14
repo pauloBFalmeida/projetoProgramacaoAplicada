@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://dyot0mrbo83vq"]
+
+[ext_resource type="Texture2D" uid="uid://cuodxdakvbbxc" path="res://assets/artes/comodos/resized_comodo_termas.png" id="1_ctcv6"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_mr46s"]
+
+[resource]
+script = ExtResource("2_mr46s")
+nome = "Fontes Termais"
+imagem = ExtResource("1_ctcv6")
+recurso_gerado = 2
+metadata/_custom_type_script = "uid://t5e33585bkg7"

@@ -7,4 +7,5 @@
 script = ExtResource("2_h0eoj")
 nome = "Loja"
 imagem = ExtResource("1_d75n3")
+recurso_gerado = 1
 metadata/_custom_type_script = "uid://t5e33585bkg7"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://d20088pa02txr"]
+
+[ext_resource type="Texture2D" uid="uid://b0fohc7vksnhm" path="res://assets/artes/comodos/resized_comodo_biblioteca.png" id="1_1djm8"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_a6sqv"]
+
+[resource]
+script = ExtResource("2_a6sqv")
+nome = "Biblioteca"
+imagem = ExtResource("1_1djm8")
+recurso_gerado = 2
+metadata/_custom_type_script = "uid://t5e33585bkg7"

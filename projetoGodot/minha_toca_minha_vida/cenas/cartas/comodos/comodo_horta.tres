@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CartaRes" format=3 uid="uid://dhc2fwmqbb7kx"]
+
+[ext_resource type="Texture2D" uid="uid://cvyf1kylfnubr" path="res://assets/artes/comodos/resized_comodo_horta.png" id="1_rqwnl"]
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="2_d8a5y"]
+
+[resource]
+script = ExtResource("2_d8a5y")
+nome = "Horta"
+imagem = ExtResource("1_rqwnl")
+recurso_gerado = 3
+metadata/_custom_type_script = "uid://t5e33585bkg7"
