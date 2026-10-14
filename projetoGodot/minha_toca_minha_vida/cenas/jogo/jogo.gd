@@ -14,8 +14,10 @@ func _ready() -> void:
 	escolha_cartas.carta_colocada.connect(_on_carta_colocada)
 
 
-func _on_carta_colocada(area: Area2D, textura: Texture2D) -> void:
+func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 	var comodo : ComodoBase = grid_comodos.pegar_comodo(area)
+	
 	if comodo:
+		var textura: Texture2D = carta.imagem
 		comodo.set_textura_comodo(textura)
 		comodo.mostrar_comodo()

@@ -46,8 +46,9 @@ centered = false
 camera = NodePath("../../Mundo/Camera2D")
 wheel_zoom_factor = 1.05
 
-[node name="EscolhaCartas" parent="UI/MenuCartas" parent_id_path=PackedInt32Array(1303200733, 2100751092) index="0" unique_id=2025154282 node_paths=PackedStringArray("mundo")]
+[node name="EscolhaCartas" parent="UI/MenuCartas" parent_id_path=PackedInt32Array(1303200733, 2104424329) index="0" unique_id=1321526808 node_paths=PackedStringArray("mundo")]
 mundo = NodePath("../../../Mundo")
 
 [editable path="Mundo/GridComodos"]
 [editable path="UI"]
+[editable path="UI/MenuCartas"]

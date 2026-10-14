@@ -1,7 +1,7 @@
 class_name EscolhaCartas
 extends Control
 
-signal carta_colocada(area: Area2D, textura: Texture2D)
+signal carta_colocada(area: Area2D, carta: CartaRes)
 
 @export var mundo: Node2D
 
@@ -26,7 +26,7 @@ func adicionar_carta(carta_res: CartaRes) -> void:
 	cartas_button_lista.append(carta_button)
 	h_box_cartas.add_child(carta_button)
 	
-	carta_button.set_textura_comodo(carta_res.imagem)
+	carta_button.set_carta_res(carta_res)
 	carta_button.pressed.connect(_pegar_carta.bind(carta_button))
 
 func _pegar_carta(carta_button_clicada : CartaButton) -> void:
@@ -43,8 +43,7 @@ func _on_h_box_gui_input(event: InputEvent) -> void:
 		(event is InputEventMouseButton and event.is_pressed()) or
 		(event is InputEventScreenTouch and event.is_pressed())
 	):
-		print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-		#_pegar_carta(null)
+		pass
 
 
 
@@ -62,20 +61,23 @@ func _criar_carta_pega(carta_button : CartaButton) -> void:
 func _on_solto_em_area(area: Area2D, carta_segurada: CartaSegurada) -> void:
 	if not carta_button_por_carta_pega.has(carta_segurada): return
 	
+	# pega a carta button
 	var carta_button := carta_button_por_carta_pega[carta_segurada]
-	carta_button_por_carta_pega.erase(carta_segurada)
+	# emite que colocou a carta na posicao, e envia o comodo referente
+	carta_colocada.emit(area, carta_button.get_carta())
 	
+	# deleta a carta button, ja que deu certo colocar
+	carta_button_por_carta_pega.erase(carta_segurada)
 	cartas_button_lista.erase(carta_button)
 	carta_button.queue_free()
 	
-	print("colocado em ", area.name)
+	# deleta a carta segurada
 	carta_segurada.queue_free()
-	
-	carta_colocada.emit(area, carta_button.get_textura_comodo())
 
 func _on_solto_fora(carta_segurada: CartaSegurada) -> void:
-	print("fora ")
-	carta_segurada.queue_free()
+	# mostra a carta novamente
+	var carta_button := carta_button_por_carta_pega[carta_segurada]
+	carta_button.show()
 	
-	for carta_button : CartaButton in cartas_button_lista:
-		carta_button.show()
+	# deleta a carta segurada
+	carta_segurada.queue_free()

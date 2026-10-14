@@ -20,15 +20,17 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not arrastando: return
 	
+	# soltar o botao do mouse
 	if event is InputEventMouseButton \
 			and event.button_index == MOUSE_BUTTON_LEFT \
 			and not event.pressed:
 		_soltar()
+	# soltar o touch
 	elif event is InputEventScreenTouch and not event.pressed:
 		_soltar()
+	# arrastar com o touch, mover a carta
 	elif event is InputEventScreenDrag:
 		position = event.position
-		print("DRAGGG")
 
 func _soltar() -> void:
 	arrastando = false
