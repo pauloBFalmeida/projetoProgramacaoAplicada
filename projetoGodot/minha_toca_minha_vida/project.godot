@@ -34,7 +34,8 @@ folder_colors={
 "res://_debug/": "gray",
 "res://assets/": "red",
 "res://cenas/": "orange",
-"res://cenas/menus/": "yellow",
+"res://cenas/cartas/": "yellow",
+"res://cenas/menus/": "green",
 "res://scripts_globais/": "blue"
 }
 

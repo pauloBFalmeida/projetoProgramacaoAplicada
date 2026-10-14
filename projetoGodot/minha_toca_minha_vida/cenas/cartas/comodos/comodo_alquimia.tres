@@ -7,5 +7,4 @@
 script = ExtResource("2_nglh1")
 nome = "Alquimia"
 imagem = ExtResource("1_jydp8")
-recurso_gerado = 1
 metadata/_custom_type_script = "uid://t5e33585bkg7"
