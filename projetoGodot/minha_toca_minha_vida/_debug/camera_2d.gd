@@ -16,11 +16,11 @@ func _process(delta: float) -> void:
 	_limitar_posicao()
 
 func mover(direcao: Vector2) -> void:
-	print(direcao)
 	position += direcao / zoom
 	_limitar_posicao()
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+# TODO: Remover isso, depois que estiver certo que o criar background funciona
+@onready var sprite_2d: Sprite2D = $Sprite2DDEBUG
 @onready var sprite_2d_scale: Vector2 = sprite_2d.scale
 func zoom_posicao(fator_zoom: float, pos_tela: Vector2) -> void:
 	var zoom_antigo := zoom.x

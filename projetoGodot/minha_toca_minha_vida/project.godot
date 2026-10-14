@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MinhaTocaMinhaVida"
-run/main_scene="uid://bu2m8hr5eg5bs"
+run/main_scene="uid://bq1wvhaj4qxce"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="uid://dn888543toxf3"
 config/windows_native_icon="res://assets/projeto_icones/icone_win.ico"
