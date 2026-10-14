@@ -21,5 +21,5 @@ extends Resource
 }
 
 @export var recurso_gerado : Dictionary[GerenciadorRecursos.Recurso, int] = {
-	GerenciadorRecursos.Recurso.MOEDAS: 10
+	GerenciadorRecursos.Recurso.MOEDAS: 0
 }

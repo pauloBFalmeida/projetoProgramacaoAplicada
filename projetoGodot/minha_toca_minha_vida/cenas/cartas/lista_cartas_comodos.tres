@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="1_6c65c"]
 [ext_resource type="Resource" uid="uid://cv3nwdoqwt1wo" path="res://cenas/cartas/comodos/comodo_alquimia.tres" id="2_gvpgp"]
 [ext_resource type="Script" uid="uid://cl8sftvojcmh6" path="res://cenas/cartas/lista_cartas.gd" id="2_yr4x5"]
-[ext_resource type="Resource" uid="uid://dy71jyh36rcnq" path="res://cenas/cartas/comodos/comodo_apartamentos.tres" id="3_o7wqp"]
 [ext_resource type="Resource" uid="uid://dcam0ergifrsv" path="res://cenas/cartas/comodos/comodo_atelie.tres" id="4_nlhuy"]
 [ext_resource type="Resource" uid="uid://cg2mphspea557" path="res://cenas/cartas/comodos/comodo_bar.tres" id="5_ypcip"]
 [ext_resource type="Resource" uid="uid://d20088pa02txr" path="res://cenas/cartas/comodos/comodo_biblioteca.tres" id="6_20r8u"]
@@ -15,8 +14,6 @@
 [ext_resource type="Resource" uid="uid://dhc2fwmqbb7kx" path="res://cenas/cartas/comodos/comodo_horta.tres" id="12_pah55"]
 [ext_resource type="Resource" uid="uid://1te4rq5sl13o" path="res://cenas/cartas/comodos/comodo_igreja.tres" id="13_4mm4d"]
 [ext_resource type="Resource" uid="uid://c51vlos7jb14t" path="res://cenas/cartas/comodos/comodo_loja.tres" id="14_i8ngi"]
-[ext_resource type="Resource" uid="uid://cx4wbnf0yq1qv" path="res://cenas/cartas/comodos/comodo_madeireira.tres" id="15_vo86p"]
-[ext_resource type="Resource" uid="uid://0sknbjuqg8tc" path="res://cenas/cartas/comodos/comodo_mina.tres" id="16_v8a2t"]
 [ext_resource type="Resource" uid="uid://ftv2eui5vgvy" path="res://cenas/cartas/comodos/comodo_papelaria.tres" id="17_t5kkn"]
 [ext_resource type="Resource" uid="uid://b8knkgyshgpca" path="res://cenas/cartas/comodos/comodo_quarto.tres" id="18_fbxke"]
 [ext_resource type="Resource" uid="uid://dlrptainfg180" path="res://cenas/cartas/comodos/comodo_restaurante.tres" id="19_foaqv"]
@@ -25,5 +22,5 @@
 
 [resource]
 script = ExtResource("2_yr4x5")
-cartas = Array[ExtResource("1_6c65c")]([ExtResource("2_gvpgp"), ExtResource("3_o7wqp"), ExtResource("4_nlhuy"), ExtResource("5_ypcip"), ExtResource("6_20r8u"), ExtResource("7_fwki1"), ExtResource("8_ek7c8"), ExtResource("9_e5gdj"), ExtResource("10_wyns6"), ExtResource("11_aat3s"), ExtResource("12_pah55"), ExtResource("13_4mm4d"), ExtResource("14_i8ngi"), ExtResource("15_vo86p"), ExtResource("16_v8a2t"), ExtResource("17_t5kkn"), ExtResource("18_fbxke"), ExtResource("19_foaqv"), ExtResource("20_va2i5"), ExtResource("21_ardu1")])
+cartas = Array[ExtResource("1_6c65c")]([ExtResource("2_gvpgp"), ExtResource("4_nlhuy"), ExtResource("5_ypcip"), ExtResource("6_20r8u"), ExtResource("7_fwki1"), ExtResource("8_ek7c8"), ExtResource("9_e5gdj"), ExtResource("10_wyns6"), ExtResource("11_aat3s"), ExtResource("12_pah55"), ExtResource("13_4mm4d"), ExtResource("14_i8ngi"), ExtResource("17_t5kkn"), ExtResource("18_fbxke"), ExtResource("19_foaqv"), ExtResource("20_va2i5"), ExtResource("21_ardu1")])
 metadata/_custom_type_script = "uid://cl8sftvojcmh6"
