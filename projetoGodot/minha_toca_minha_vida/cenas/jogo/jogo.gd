@@ -21,3 +21,4 @@ func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 		var textura: Texture2D = carta.imagem
 		comodo.set_textura_comodo(textura)
 		comodo.mostrar_comodo()
+		print("Posicionado em ", comodo.posicao_grid)

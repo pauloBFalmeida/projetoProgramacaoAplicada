@@ -25,6 +25,8 @@ func _ready() -> void:
 	for c in get_children(): c.queue_free()
 	
 	_criar_grid()
+	
+const LABEL_POSICAO = preload("uid://dykvnpcnwld0b")
 
 # cria a grid
 func _criar_grid() -> void:
@@ -43,6 +45,14 @@ func _criar_grid() -> void:
 			var comodo := COMODO_BASE.instantiate() as ComodoBase
 			comodos.append(comodo)
 			posicao.add_child(comodo)
+			# 
+			comodo.posicao_grid = Vector2i(x,y)
+			var label := LABEL_POSICAO.instantiate() as Label
+			label.text = "x: %d, y: %d" % [x, y]
+			 
+			posicao.add_child(label)
+			label.position = Vector2.ZERO
+			
 			#if x == 2 and y == 0:
 			comodo.piscar_clicavel()
 			

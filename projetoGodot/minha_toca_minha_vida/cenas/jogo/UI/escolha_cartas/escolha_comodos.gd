@@ -81,3 +81,5 @@ func _on_solto_fora(carta_segurada: CartaSegurada) -> void:
 	
 	# deleta a carta segurada
 	carta_segurada.queue_free()
+	
+	print("Fora de posicao possivel")

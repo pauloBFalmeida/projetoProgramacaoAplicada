@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bu3d75pl2esmy" path="res://cenas/jogo/comodos/grid_comodos.tscn" id="5_0xxu0"]
 [ext_resource type="PackedScene" uid="uid://devghcyxloprj" path="res://cenas/jogo/UI/ui_jogo.tscn" id="6_0qu2t"]
 [ext_resource type="PackedScene" uid="uid://dvqy4auvlk8jy" path="res://cenas/jogo/comodos/comodo_base.tscn" id="6_0xxu0"]
+[ext_resource type="PackedScene" uid="uid://dykvnpcnwld0b" path="res://_debug/label_posicao.tscn" id="7_7mv33"]
 
 [node name="Jogo" type="Node" unique_id=1130431866]
 script = ExtResource("1_tgo76")
@@ -39,6 +40,8 @@ centered = false
 [node name="ComodoQuarto" parent="Mundo/GridComodos/PosEndX" parent_id_path=PackedInt32Array(1603842377, 1798159814) index="0" unique_id=327365360 instance=ExtResource("6_0xxu0")]
 
 [node name="ComodoQuarto" parent="Mundo/GridComodos/PosNextY" parent_id_path=PackedInt32Array(1603842377, 786585999) index="0" unique_id=1231261065 instance=ExtResource("6_0xxu0")]
+
+[node name="Label" parent="Mundo/GridComodos/PosNextY/ComodoQuarto" unique_id=1962761596 instance=ExtResource("7_7mv33")]
 
 [node name="UI" parent="." unique_id=1303200733 instance=ExtResource("6_0qu2t")]
 

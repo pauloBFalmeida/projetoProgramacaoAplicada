@@ -6,6 +6,8 @@ class_name ComodoBase
 
 @onready var area_2d: Area2D = $Area2D
 
+var posicao_grid := Vector2i.ZERO
+
 var tween_piscar : Tween
 
 func _ready() -> void:

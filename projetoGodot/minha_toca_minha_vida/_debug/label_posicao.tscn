@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dykvnpcnwld0b"]
+
+[node name="Label" type="Label" unique_id=1962761596]
+z_index = 10
+offset_left = -3.885
+offset_right = 116.115
+offset_bottom = 42.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-50, -20)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "X 1, Y 12"
+horizontal_alignment = 1
+vertical_alignment = 1
