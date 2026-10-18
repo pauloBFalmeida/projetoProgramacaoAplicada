@@ -12,9 +12,10 @@ func _ready() -> void:
 	grafo.atualizado.connect(_on_grafo_atualizado)
 
 func _on_grafo_atualizado() -> void:
-	print("--------------------------")
-	for pos in grafo.comodos:
-		print(pos, " Moradia=", grafo.quantidade(pos, GerenciadorRecursos.Recurso.MORADIA))
+	pass
+	#print("--------------------------")
+	#for pos in grafo.comodos:
+		#print(pos, " Moradia=", grafo.quantidade(pos, GerenciadorRecursos.Recurso.MORADIA))
 
 # Nodo Comodo
 # -----------------------------------------------------------------------------
