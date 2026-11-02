@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ListaCartas" format=3 uid="uid://n345dr57jxgy"]
+
+[ext_resource type="Script" uid="uid://t5e33585bkg7" path="res://cenas/cartas/carta_res.gd" id="1_4ulkb"]
+[ext_resource type="Resource" uid="uid://cv3nwdoqwt1wo" path="res://cenas/cartas/comodos/comodo_alquimia.tres" id="2_w1u7n"]
+[ext_resource type="Resource" uid="uid://dcam0ergifrsv" path="res://cenas/cartas/comodos/comodo_atelie.tres" id="4_41ssy"]
+[ext_resource type="Resource" uid="uid://cg2mphspea557" path="res://cenas/cartas/comodos/comodo_bar.tres" id="5_x2ntb"]
+[ext_resource type="Resource" uid="uid://d20088pa02txr" path="res://cenas/cartas/comodos/comodo_biblioteca.tres" id="6_dcr4r"]
+[ext_resource type="Resource" uid="uid://dme1w5oir5kme" path="res://cenas/cartas/comodos/comodo_cafeteria.tres" id="7_8vh54"]
+[ext_resource type="Resource" uid="uid://fe88dl7mlhjp" path="res://cenas/cartas/comodos/comodo_escola.tres" id="8_genbq"]
+[ext_resource type="Resource" uid="uid://ex78owbswkt" path="res://cenas/cartas/comodos/comodo_escritorio.tres" id="9_pgco1"]
+[ext_resource type="Resource" uid="uid://d2nst0wiqws11" path="res://cenas/cartas/comodos/comodo_feira.tres" id="10_fl1wa"]
+[ext_resource type="Resource" uid="uid://pb5dhl2gx1kh" path="res://cenas/cartas/comodos/comodo_floricultura.tres" id="11_8qqg5"]
+[ext_resource type="Resource" uid="uid://dhc2fwmqbb7kx" path="res://cenas/cartas/comodos/comodo_horta.tres" id="12_jd16x"]
+[ext_resource type="Resource" uid="uid://1te4rq5sl13o" path="res://cenas/cartas/comodos/comodo_igreja.tres" id="13_hnykd"]
+[ext_resource type="Resource" uid="uid://c51vlos7jb14t" path="res://cenas/cartas/comodos/comodo_loja.tres" id="14_drmvl"]
+[ext_resource type="Resource" uid="uid://ftv2eui5vgvy" path="res://cenas/cartas/comodos/comodo_papelaria.tres" id="17_cbbkv"]
+[ext_resource type="Resource" uid="uid://b8knkgyshgpca" path="res://cenas/cartas/comodos/comodo_quarto.tres" id="18_nb6cu"]
+[ext_resource type="Resource" uid="uid://dlrptainfg180" path="res://cenas/cartas/comodos/comodo_restaurante.tres" id="19_2mn77"]
+[ext_resource type="Resource" uid="uid://cbw8q6ekh4tqd" path="res://cenas/cartas/comodos/comodo_sala.tres" id="20_ew6pd"]
+[ext_resource type="Resource" uid="uid://dyot0mrbo83vq" path="res://cenas/cartas/comodos/comodo_termas.tres" id="21_qal6u"]
+[ext_resource type="Script" uid="uid://cl8sftvojcmh6" path="res://cenas/cartas/lista_cartas.gd" id="22_4b8es"]
+
+[resource]
+script = ExtResource("22_4b8es")
+cartas = Array[ExtResource("1_4ulkb")]([ExtResource("2_w1u7n"), ExtResource("4_41ssy"), ExtResource("5_x2ntb"), ExtResource("6_dcr4r"), ExtResource("7_8vh54"), ExtResource("8_genbq"), ExtResource("9_pgco1"), ExtResource("10_fl1wa"), ExtResource("11_8qqg5"), ExtResource("12_jd16x"), ExtResource("13_hnykd"), ExtResource("14_drmvl"), ExtResource("17_cbbkv"), ExtResource("18_nb6cu"), ExtResource("19_2mn77"), ExtResource("20_ew6pd"), ExtResource("21_qal6u")])
+metadata/_custom_type_script = "uid://cl8sftvojcmh6"
