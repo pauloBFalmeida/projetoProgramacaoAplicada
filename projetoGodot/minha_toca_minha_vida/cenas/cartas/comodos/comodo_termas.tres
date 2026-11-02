@@ -7,5 +7,5 @@
 script = ExtResource("2_mr46s")
 nome = "Fontes Termais"
 imagem = ExtResource("1_ctcv6")
-recurso_gerado = 2
+nivel_desbloqueio = 2
 metadata/_custom_type_script = "uid://t5e33585bkg7"

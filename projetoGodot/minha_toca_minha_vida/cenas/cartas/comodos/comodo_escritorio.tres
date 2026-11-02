@@ -7,5 +7,5 @@
 script = ExtResource("2_j1pkv")
 nome = "Escritório"
 imagem = ExtResource("1_ilegm")
-recurso_gerado = 1
+nivel_desbloqueio = 3
 metadata/_custom_type_script = "uid://t5e33585bkg7"

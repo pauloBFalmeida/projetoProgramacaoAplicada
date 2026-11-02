@@ -7,4 +7,5 @@
 script = ExtResource("2_feiue")
 nome = "Apartamento"
 imagem = ExtResource("1_6qac4")
+nivel_desbloqueio = 2
 metadata/_custom_type_script = "uid://t5e33585bkg7"

@@ -7,5 +7,5 @@
 script = ExtResource("2_cx7wf")
 nome = "Restaurante"
 imagem = ExtResource("1_nmcpb")
-recurso_gerado = 3
+nivel_desbloqueio = 3
 metadata/_custom_type_script = "uid://t5e33585bkg7"

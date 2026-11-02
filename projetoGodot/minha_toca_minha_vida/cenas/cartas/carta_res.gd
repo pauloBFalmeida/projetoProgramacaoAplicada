@@ -10,7 +10,7 @@ extends Resource
 
 @export_category("Atributos Desbloqueio")
 ##
-@export var nivel_desbloqueio : int 
+@export var nivel_desbloqueio : int = 1
 ##
 @export var preco_desbloqueio : int = 5
 

@@ -7,5 +7,5 @@
 script = ExtResource("2_4baxa")
 nome = "Floricultura"
 imagem = ExtResource("1_yw73u")
-recurso_gerado = 1
+nivel_desbloqueio = 2
 metadata/_custom_type_script = "uid://t5e33585bkg7"
