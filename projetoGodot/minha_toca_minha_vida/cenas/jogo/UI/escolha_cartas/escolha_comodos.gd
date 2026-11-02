@@ -6,6 +6,7 @@ signal carta_colocada(area: Area2D, carta: CartaRes)
 @export var mundo: Node2D
 
 @onready var h_box_cartas: HBoxContainer = %HBoxCartas
+@onready var toggle_menu: Control = $ToggleMenu
 
 var cartas_button_lista : Array[CartaButton] = []
 var carta_button_por_carta_pega : Dictionary[CartaSegurada, CartaButton] = {}
@@ -49,6 +50,8 @@ func _criar_carta_pega(carta_button : CartaButton) -> void:
 	carta_segurada.solto_em_area.connect(_on_solto_em_area.bind(carta_segurada))
 	carta_segurada.solto_fora.connect(_on_solto_fora.bind(carta_segurada))
 	carta_segurada.iniciar_arraste()
+	
+	carta_segurada.set_nodo_desconsiderar(toggle_menu)
 
 func _on_solto_em_area(area: Area2D, carta_segurada: CartaSegurada) -> void:
 	if not carta_button_por_carta_pega.has(carta_segurada): return
