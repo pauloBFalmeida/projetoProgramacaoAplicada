@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cyetl5lesqy3t"]
+
+[ext_resource type="Script" uid="uid://d3v5tsyrs1gld" path="res://scripts/jogo.gd" id="1_7bb4d"]
+[ext_resource type="PackedScene" uid="uid://bridel483yra1" path="res://scenes/pause_menu.tscn" id="2_sq8yp"]
+
+[node name="jogo" type="Node2D" unique_id=1476990718]
+process_mode = 3
+script = ExtResource("1_7bb4d")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1689609139]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Player" type="ColorRect" parent="." unique_id=735556041 groups=["player"]]
+unique_name_in_owner = true
+process_mode = 1
+custom_minimum_size = Vector2(120, 120)
+offset_left = 480.0
+offset_top = 900.0
+offset_right = 600.0
+offset_bottom = 1020.0
+color = Color(0.9490196, 0, 0, 1)
+
+[node name="PauseMenu" parent="." unique_id=1032935400 instance=ExtResource("2_sq8yp")]

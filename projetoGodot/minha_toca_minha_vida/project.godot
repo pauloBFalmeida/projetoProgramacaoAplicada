@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MinhaTocaMinhaVida"
-run/main_scene="uid://bq1wvhaj4qxce"
+run/main_scene="uid://clchghhc7g57k"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="uid://dn888543toxf3"
 config/windows_native_icon="res://assets/projeto_icones/icone_win.ico"
@@ -19,6 +19,10 @@ config/windows_native_icon="res://assets/projeto_icones/icone_win.ico"
 [autoload]
 
 GerenciadorRecursos="*uid://bxlepoft2n00h"
+GameState="*uid://bti3tcr48vawg"
+Config="*uid://egccogit756o"
+SaveManager="*uid://dgx5if8xq5q8v"
+AudioManager="*uid://c2gdeule40cga"
 
 [display]
 

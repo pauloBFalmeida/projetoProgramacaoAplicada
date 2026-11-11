@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://bxyr6l60euag6"]
+
+[ext_resource type="Texture2D" uid="uid://f2ycpfpgytml" path="res://assets/ui/buttons/VOLTAR_NORM.png" id="1_n2d3a"]
+[ext_resource type="Script" uid="uid://wrxuvknd54d4" path="res://cenas/menu_inicial/scripts/saves.gd" id="1_o3xdj"]
+[ext_resource type="Texture2D" uid="uid://byle64rntfkd7" path="res://assets/ui/buttons/VOLTAR_DEFORM.png" id="2_o3xdj"]
+
+[sub_resource type="Theme" id="Theme_knqa7"]
+default_font_size = 40
+
+[node name="Saves" type="Control" unique_id=39291193]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o3xdj")
+
+[node name="Background" type="ColorRect" parent="." unique_id=95782568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.7529412, 1, 1)
+
+[node name="Title" type="Label" parent="." unique_id=832415879]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.5
+offset_top = 14.0
+offset_right = 132.5
+offset_bottom = 138.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.051970966, 0.05197096, 0.05197095, 1)
+theme_override_font_sizes/font_size = 90
+text = "SAVES"
+horizontal_alignment = 1
+
+[node name="Slots" type="VBoxContainer" parent="." unique_id=739576186]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Slot1" type="HBoxContainer" parent="Slots" unique_id=140242575]
+layout_mode = 2
+
+[node name="btnslot1" type="Button" parent="Slots/Slot1" unique_id=2020192929]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Slot 1 — Vazio"
+
+[node name="btndelete1" type="Button" parent="Slots/Slot1" unique_id=2001272773]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="Slot2" type="HBoxContainer" parent="Slots" unique_id=1896538391]
+layout_mode = 2
+
+[node name="btnslot2" type="Button" parent="Slots/Slot2" unique_id=88591273]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Slot 2 — Vazio"
+
+[node name="Btndelete2" type="Button" parent="Slots/Slot2" unique_id=70568532]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="Slot3" type="HBoxContainer" parent="Slots" unique_id=199174917]
+layout_mode = 2
+
+[node name="btnslot3" type="Button" parent="Slots/Slot3" unique_id=3389697]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Slot 3 — Vazio"
+
+[node name="Btndelete3" type="Button" parent="Slots/Slot3" unique_id=2048030308]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="BtnVoltar" type="TextureButton" parent="." unique_id=907295471]
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -209.25
+offset_top = -177.16504
+offset_right = 193.25073
+offset_bottom = -27.16504
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_n2d3a")
+texture_pressed = ExtResource("2_o3xdj")
+texture_hover = ExtResource("2_o3xdj")
+texture_focused = ExtResource("2_o3xdj")
+stretch_mode = 5
+
+[node name="ConfirmDelete" type="ConfirmationDialog" parent="." unique_id=1713882886]
+unique_name_in_owner = true
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(900, 500)
+theme = SubResource("Theme_knqa7")
+ok_button_text = "Apagar"
+cancel_button_text = "Cancelar"
+
+[connection signal="pressed" from="Slots/Slot1/btnslot1" to="." method="_on_btnslot_1_pressed"]
+[connection signal="pressed" from="Slots/Slot1/btndelete1" to="." method="_on_btndelete_1_pressed"]
+[connection signal="pressed" from="Slots/Slot2/btnslot2" to="." method="_on_btnslot_2_pressed"]
+[connection signal="pressed" from="Slots/Slot2/Btndelete2" to="." method="_on_btndelete_2_pressed"]
+[connection signal="pressed" from="Slots/Slot3/btnslot3" to="." method="_on_btnslot_3_pressed"]
+[connection signal="pressed" from="Slots/Slot3/Btndelete3" to="." method="_on_btndelete_3_pressed"]
+[connection signal="pressed" from="BtnVoltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="canceled" from="ConfirmDelete" to="." method="_on_confirm_delete_canceled"]
+[connection signal="confirmed" from="ConfirmDelete" to="." method="_on_confirm_delete_confirmed"]

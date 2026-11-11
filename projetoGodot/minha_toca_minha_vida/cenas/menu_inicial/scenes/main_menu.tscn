@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://clchghhc7g57k"]
+
+[ext_resource type="Script" uid="uid://dnqqmy32gtwaj" path="res://cenas/menu_inicial/scripts/main_menu.gd" id="1_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://bh1uly8115gkx" path="res://assets/ui/buttons/7.png" id="2_flqon"]
+[ext_resource type="Texture2D" uid="uid://lxcuom43e1pk" path="res://assets/ui/background.jpg" id="2_rcqid"]
+[ext_resource type="Texture2D" uid="uid://dqro5ufbf3cgy" path="res://assets/ui/buttons/8.png" id="3_rcqid"]
+[ext_resource type="Texture2D" uid="uid://dacu40s4xrgl6" path="res://assets/ui/buttons/5.png" id="4_1ajci"]
+[ext_resource type="Texture2D" uid="uid://moybk0kd11ds" path="res://assets/ui/buttons/6.png" id="5_7b55j"]
+[ext_resource type="Texture2D" uid="uid://s6cp26seh7kq" path="res://assets/ui/buttons/OPÇÕES_NORM.png" id="6_5pajh"]
+[ext_resource type="Texture2D" uid="uid://btvvqvlfsmdbp" path="res://assets/ui/buttons/4.png" id="7_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://bma52p56w2mxu" path="res://assets/ui/buttons/11.png" id="8_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://b0vb7uy0l7f7b" path="res://assets/ui/buttons/12.png" id="9_hstxw"]
+[ext_resource type="Texture2D" uid="uid://ck7fq3tj5y0n8" path="res://assets/ui/buttons/9.png" id="10_8egab"]
+[ext_resource type="Texture2D" uid="uid://boxm06bwarl1" path="res://assets/ui/buttons/10.png" id="11_gw5y6"]
+
+[node name="MainMenu" type="Control" unique_id=130093890]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgwnu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1078550437]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_rcqid")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1131134047]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 110
+
+[node name="Content" type="VBoxContainer" parent="Margin" unique_id=1077201793]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Spacer" type="Control" parent="Margin/Content" unique_id=449835279]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="Margin/Content" unique_id=1807350985]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+text = "Minha Toca Minha Vida"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Margin/Content" unique_id=745136588]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="BtnIniciar" type="TextureButton" parent="Margin/Content/Buttons" unique_id=307076940]
+custom_minimum_size = Vector2(500, 100)
+custom_maximum_size = Vector2(-1, 90)
+layout_mode = 2
+texture_normal = ExtResource("2_flqon")
+texture_pressed = ExtResource("3_rcqid")
+texture_hover = ExtResource("3_rcqid")
+texture_focused = ExtResource("3_rcqid")
+stretch_mode = 5
+
+[node name="BtnSaves" type="TextureButton" parent="Margin/Content/Buttons" unique_id=1622911406]
+custom_minimum_size = Vector2(500, 140)
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 2
+texture_normal = ExtResource("4_1ajci")
+texture_pressed = ExtResource("5_7b55j")
+texture_hover = ExtResource("5_7b55j")
+texture_focused = ExtResource("5_7b55j")
+stretch_mode = 5
+
+[node name="BtnSettings" type="TextureButton" parent="Margin/Content/Buttons" unique_id=399399418]
+custom_minimum_size = Vector2(500, 140)
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 2
+texture_normal = ExtResource("6_5pajh")
+texture_pressed = ExtResource("7_j7ex8")
+texture_hover = ExtResource("7_j7ex8")
+texture_focused = ExtResource("7_j7ex8")
+stretch_mode = 5
+
+[node name="BtnCredits" type="TextureButton" parent="Margin/Content/Buttons" unique_id=617053868]
+custom_minimum_size = Vector2(500, 140)
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 2
+texture_normal = ExtResource("8_a8gd2")
+texture_pressed = ExtResource("9_hstxw")
+texture_hover = ExtResource("9_hstxw")
+texture_focused = ExtResource("9_hstxw")
+stretch_mode = 5
+
+[node name="BtnQuit" type="TextureButton" parent="Margin/Content/Buttons" unique_id=2147143734]
+custom_minimum_size = Vector2(500, 140)
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 2
+texture_normal = ExtResource("10_8egab")
+texture_pressed = ExtResource("11_gw5y6")
+texture_hover = ExtResource("11_gw5y6")
+texture_focused = ExtResource("11_gw5y6")
+stretch_mode = 5
+
+[node name="Spacer2" type="Control" parent="Margin/Content" unique_id=1024976461]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[connection signal="pressed" from="Margin/Content/Buttons/BtnIniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="Margin/Content/Buttons/BtnSaves" to="." method="_on_btn_saves_pressed"]
+[connection signal="pressed" from="Margin/Content/Buttons/BtnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="Margin/Content/Buttons/BtnCredits" to="." method="_on_btn_credits_pressed"]
+[connection signal="pressed" from="Margin/Content/Buttons/BtnQuit" to="." method="_on_btn_quit_pressed"]

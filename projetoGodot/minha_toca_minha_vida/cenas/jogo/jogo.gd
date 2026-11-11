@@ -5,6 +5,7 @@ extends Node
 @onready var camera_2d: Camera2D = $Mundo/Camera2D
 
 @onready var adm_grafo_comodos: AdmGrafoComodos = $AdmGrafoComodos
+@onready var adm_jogo: AdmJogo = $AdmJogo
 
 @onready var escolha_cartas: EscolhaCartas = $UI/MenuCartas/EscolhaCartas
 @onready var grid_comodos: GridComodos = $Mundo/GridComodos
@@ -16,9 +17,7 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	escolha_cartas.carta_colocada.connect(_on_carta_colocada)
-	
-	for carta_res : CartaRes in LISTA_CARTAS_COMODOS.cartas:
-		escolha_cartas.adicionar_carta(carta_res)
+	adm_jogo.iniciar()
 
 func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 	var comodo : ComodoBase = grid_comodos.pegar_comodo(area)

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dm7k0lt1xsmp5"]
+
+[ext_resource type="Script" uid="uid://bt7yo8yyqd3w5" path="res://cenas/menu_inicial/scripts/credits.gd" id="1_0ctdu"]
+[ext_resource type="Texture2D" uid="uid://f2ycpfpgytml" path="res://assets/ui/buttons/VOLTAR_NORM.png" id="2_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://byle64rntfkd7" path="res://assets/ui/buttons/VOLTAR_DEFORM.png" id="3_8gwij"]
+
+[node name="Credits" type="Control" unique_id=1247317432]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ctdu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=698064889]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.87828016, 0.9658901, 0.94515127, 1)
+
+[node name="Tiltle" type="Label" parent="." unique_id=1338243449]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -214.5
+offset_top = 18.0
+offset_right = 214.5
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+theme_override_font_sizes/font_size = 90
+text = "CRÉDITOS"
+
+[node name="Links" type="VBoxContainer" parent="." unique_id=1695392422]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="LinkPaulo" type="LinkButton" parent="Links" unique_id=480764983]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.07284246, 0.072842725, 0.07284253, 1)
+theme_override_colors/font_hover_color = Color(0.17254902, 0.3372549, 0.8039216, 1)
+theme_override_font_sizes/font_size = 50
+text = "Paulo - Programador principal"
+underline = 1
+uri = "https://paulobfalmeida.itch.io/"
+
+[node name="LinkJulia" type="LinkButton" parent="Links" unique_id=1527711713]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+theme_override_colors/font_hover_color = Color(0.17254902, 0.3372549, 0.8039216, 1)
+theme_override_font_sizes/font_size = 50
+text = "Julia - Artista"
+underline = 1
+uri = "https://thebonnie.itch.io/"
+
+[node name="LinkDiogo" type="LinkButton" parent="Links" unique_id=8998887]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.047557496, 0.047557727, 0.04755757, 1)
+theme_override_colors/font_hover_color = Color(0.17254902, 0.3372549, 0.8039216, 1)
+theme_override_font_sizes/font_size = 50
+text = "Diogo - Programador"
+underline = 1
+uri = "https://diogokurth.itch.io/"
+
+[node name="LinkItch" type="LinkButton" parent="Links" unique_id=1750466039]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.10579171, 0.068745546, 0.02951409, 1)
+theme_override_colors/font_hover_color = Color(0.17254902, 0.3372549, 0.8039216, 1)
+theme_override_font_sizes/font_size = 50
+text = "Itch.io do Jogo"
+underline = 1
+uri = "https://paulobfalmeida.itch.io/minha-toca-minha-vida"
+
+[node name="BtnVoltar" type="TextureButton" parent="." unique_id=88161450]
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -111.0
+offset_right = 200.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_2fbfq")
+texture_pressed = ExtResource("3_8gwij")
+texture_hover = ExtResource("3_8gwij")
+texture_focused = ExtResource("3_8gwij")
+stretch_mode = 5
+
+[connection signal="pressed" from="BtnVoltar" to="." method="_on_btn_voltar_pressed"]

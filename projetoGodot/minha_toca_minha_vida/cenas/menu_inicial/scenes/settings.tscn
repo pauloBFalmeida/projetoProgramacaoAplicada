@@ -1,0 +1,464 @@
+[gd_scene format=3 uid="uid://ovssyi1b1mwe"]
+
+[ext_resource type="Script" uid="uid://d2oowq4umhmqq" path="res://cenas/menu_inicial/scripts/settings.gd" id="1_6wm04"]
+[ext_resource type="Texture2D" uid="uid://lg6jgo3vk53j" path="res://assets/ui/buttons/Botões.png" id="2_6wm04"]
+[ext_resource type="Texture2D" uid="uid://djxw451r72t6y" path="res://assets/ui/buttons/Botões (1).png" id="3_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://bdwhuwtfmk804" path="res://assets/ui/buttons/config1.png" id="4_uhhto"]
+[ext_resource type="Texture2D" uid="uid://bxq0er0smma3" path="res://assets/ui/buttons/config2.png" id="5_1g033"]
+[ext_resource type="Texture2D" uid="uid://ba6ekt036kitr" path="res://assets/ui/buttons/som1.png" id="6_01roj"]
+[ext_resource type="Texture2D" uid="uid://dscs86jwglubx" path="res://assets/ui/buttons/som2.png" id="7_wqwn7"]
+[ext_resource type="Texture2D" uid="uid://djo101upi32ui" path="res://assets/ui/buttons/gráfico1.png" id="8_oe2nd"]
+[ext_resource type="Texture2D" uid="uid://dc4ldhgavptva" path="res://assets/ui/buttons/gráfico2.png" id="9_7kvyq"]
+[ext_resource type="Texture2D" uid="uid://bru0x8lvpnnvu" path="res://assets/ui/buttons/mobile1.png" id="10_ql1j0"]
+[ext_resource type="Texture2D" uid="uid://cr4ebby4r3how" path="res://assets/ui/buttons/mobile2.png" id="11_6dbjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1fef"]
+bg_color = Color(0.029000474, 0.18717018, 0.3177697, 1)
+border_width_left = 20
+border_width_right = 20
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_detail = 20
+shadow_size = 11
+shadow_offset = Vector2(0, 11.575)
+
+[node name="Settings" type="Control" unique_id=842447248]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wm04")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1066253055]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.16470589, 0.42352942, 1)
+
+[node name="Header" type="PanelContainer" parent="." unique_id=247776162]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1fef")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header" unique_id=1197137192]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BtnVoltar" type="TextureButton" parent="Header/HBoxContainer" unique_id=715767026]
+custom_minimum_size = Vector2(100.13, 103.925)
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.86
+offset_transform_enabled = true
+offset_transform_position = Vector2(-111.88, 0.67)
+offset_transform_scale = Vector2(0.875, 0.875)
+texture_normal = ExtResource("2_6wm04")
+texture_pressed = ExtResource("3_f4mfi")
+texture_hover = ExtResource("3_f4mfi")
+texture_focused = ExtResource("3_f4mfi")
+
+[node name="Titulo" type="Label" parent="Header/HBoxContainer" unique_id=1950027511]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.77254903, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 60
+text = "CONFIGURAÇÕES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Versao" type="Label" parent="Header/HBoxContainer" unique_id=723444563]
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "V 0.0.1"
+
+[node name="TabsBar" type="HBoxContainer" parent="." unique_id=1259167734]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -120.0
+offset_right = 581.0
+offset_bottom = 30.000244
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.645, 0.645)
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnTabGeral" type="TextureButton" parent="TabsBar" unique_id=1415467088]
+layout_mode = 2
+texture_normal = ExtResource("4_uhhto")
+texture_pressed = ExtResource("5_1g033")
+texture_hover = ExtResource("5_1g033")
+texture_focused = ExtResource("5_1g033")
+
+[node name="BtnTabAudio" type="TextureButton" parent="TabsBar" unique_id=62867597]
+layout_mode = 2
+texture_normal = ExtResource("6_01roj")
+texture_pressed = ExtResource("7_wqwn7")
+texture_hover = ExtResource("7_wqwn7")
+texture_focused = ExtResource("7_wqwn7")
+
+[node name="BtnTabVideo" type="TextureButton" parent="TabsBar" unique_id=979846244]
+layout_mode = 2
+texture_normal = ExtResource("8_oe2nd")
+texture_pressed = ExtResource("9_7kvyq")
+texture_hover = ExtResource("9_7kvyq")
+texture_focused = ExtResource("9_7kvyq")
+
+[node name="BtnTabMobile" type="TextureButton" parent="TabsBar" unique_id=1218519257]
+layout_mode = 2
+texture_normal = ExtResource("10_ql1j0")
+texture_pressed = ExtResource("11_6dbjw")
+texture_hover = ExtResource("11_6dbjw")
+texture_focused = ExtResource("11_6dbjw")
+
+[node name="AreaConteudo" type="Control" parent="." unique_id=1996735361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 165.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PaginaGeral" type="VBoxContainer" parent="AreaConteudo" unique_id=1830801900]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PaginaAudio" type="VBoxContainer" parent="AreaConteudo" unique_id=716076722]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="espaço" type="HBoxContainer" parent="AreaConteudo/PaginaAudio" unique_id=749399419]
+custom_minimum_size = Vector2(6.22, 27.76)
+custom_maximum_size = Vector2(-1, 92.345)
+layout_mode = 2
+size_flags_vertical = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AreaConteudo/PaginaAudio" unique_id=560660196]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 1.37
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer2" unique_id=2085230294]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(22.935, 0)
+theme_override_font_sizes/font_size = 36
+text = "Volume Geral"
+
+[node name="SliderMaster" type="HSlider" parent="AreaConteudo/PaginaAudio/HBoxContainer2" unique_id=248100761]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-151.125, 1.285)
+offset_transform_scale = Vector2(0.805, 0.805)
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="porMaster" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer2" unique_id=562847684]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-669.67, 15.09)
+theme_override_font_sizes/font_size = 36
+text = "%"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="AreaConteudo/PaginaAudio" unique_id=823350736]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer3" unique_id=343332988]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(22.935, 0)
+theme_override_font_sizes/font_size = 36
+text = "Música
+"
+
+[node name="SliderMusic" type="HSlider" parent="AreaConteudo/PaginaAudio/HBoxContainer3" unique_id=1096111645]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-151.125, 1.285)
+offset_transform_scale = Vector2(0.805, 0.805)
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="porMusic" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer3" unique_id=1216708887]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-667.305, 14.385)
+theme_override_font_sizes/font_size = 36
+text = "%"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="AreaConteudo/PaginaAudio" unique_id=1167474066]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 14.15
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer4" unique_id=58760210]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(22.935, 0)
+theme_override_font_sizes/font_size = 36
+text = "UI
+"
+
+[node name="SliderUi" type="HSlider" parent="AreaConteudo/PaginaAudio/HBoxContainer4" unique_id=866819655]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-151.125, 1.285)
+offset_transform_scale = Vector2(0.805, 0.805)
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="porUi" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer4" unique_id=725657091]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-667.305, 14.385)
+theme_override_font_sizes/font_size = 36
+text = "%"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="AreaConteudo/PaginaAudio" unique_id=1266871280]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+size_flags_stretch_ratio = 201.1
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+alignment = 1
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaAudio/HBoxContainer5" unique_id=1338520569]
+custom_minimum_size = Vector2(3.235, 0)
+custom_maximum_size = Vector2(290.65, -1)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.59
+offset_transform_enabled = true
+offset_transform_position = Vector2(-43.205, -1.47)
+offset_transform_position_ratio = Vector2(-0.04, 0)
+theme_override_font_sizes/font_size = 36
+text = "Mudo Geral"
+
+[node name="CheckMute" type="CheckButton" parent="AreaConteudo/PaginaAudio/HBoxContainer5" unique_id=631145058]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(202.55, 20.64)
+custom_maximum_size = Vector2(175.485, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-293.88, 0)
+offset_transform_scale = Vector2(2.36, 2.36)
+layout_direction = 4
+
+[node name="PaginaMobile" type="VBoxContainer" parent="AreaConteudo" unique_id=115882995]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="PaginaVideo" type="VBoxContainer" parent="AreaConteudo" unique_id=1527475352]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="espaço" type="HBoxContainer" parent="AreaConteudo/PaginaVideo" unique_id=917913501]
+custom_minimum_size = Vector2(6.22, 27.76)
+custom_maximum_size = Vector2(-1, 92.345)
+layout_mode = 2
+size_flags_vertical = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AreaConteudo/PaginaVideo" unique_id=1762428340]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.37
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaVideo/HBoxContainer2" unique_id=725840871]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(22.935, 0)
+theme_override_font_sizes/font_size = 36
+text = "Brilho Geral"
+
+[node name="SliderBrightness" type="HSlider" parent="AreaConteudo/PaginaVideo/HBoxContainer2" unique_id=1330431091]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-151.125, 1.285)
+offset_transform_scale = Vector2(0.805, 0.805)
+min_value = 0.3
+max_value = 1.0
+step = 0.05
+value = 0.5
+
+[node name="porBrightness" type="Label" parent="AreaConteudo/PaginaVideo/HBoxContainer2" unique_id=1268245161]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-669.67, 15.09)
+theme_override_font_sizes/font_size = 36
+text = "%"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="AreaConteudo/PaginaVideo" unique_id=2006677785]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaVideo/HBoxContainer3" unique_id=546013312]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(22.935, 0)
+theme_override_font_sizes/font_size = 36
+text = "Sincronização Vertical (VSync)
+"
+
+[node name="CheckVSync" type="CheckButton" parent="AreaConteudo/PaginaVideo/HBoxContainer3" unique_id=793374092]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.28
+offset_transform_enabled = true
+offset_transform_position = Vector2(-470.605, 0)
+offset_transform_scale = Vector2(2.855, 2.855)
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="AreaConteudo/PaginaVideo" unique_id=767001803]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 11.52
+offset_transform_enabled = true
+offset_transform_position = Vector2(128.24, 0)
+offset_transform_scale = Vector2(1.25, 1.25)
+
+[node name="Label" type="Label" parent="AreaConteudo/PaginaVideo/HBoxContainer4" unique_id=1691810822]
+layout_mode = 2
+size_flags_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(22.935, 0)
+theme_override_font_sizes/font_size = 36
+text = "Limite de FPS"
+
+[node name="OptFPS" type="OptionButton" parent="AreaConteudo/PaginaVideo/HBoxContainer4" unique_id=478923258]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.38
+offset_transform_enabled = true
+offset_transform_position = Vector2(-170.45, 0)
+offset_transform_scale = Vector2(0.55, 0.55)
+theme_override_font_sizes/font_size = 40
+item_count = 4
+popup/item_0/text = "30"
+popup/item_0/id = 0
+popup/item_1/text = "60"
+popup/item_1/id = 1
+popup/item_2/text = "120"
+popup/item_2/id = 2
+popup/item_3/text = "144"
+popup/item_3/id = 3
+
+[connection signal="pressed" from="Header/HBoxContainer/BtnVoltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="pressed" from="TabsBar/BtnTabGeral" to="." method="_on_btn_tab_geral_pressed"]
+[connection signal="pressed" from="TabsBar/BtnTabAudio" to="." method="_on_btn_tab_audio_pressed"]
+[connection signal="pressed" from="TabsBar/BtnTabVideo" to="." method="_on_btn_tab_video_pressed"]
+[connection signal="pressed" from="TabsBar/BtnTabMobile" to="." method="_on_btn_tab_mobile_pressed"]
+[connection signal="value_changed" from="AreaConteudo/PaginaAudio/HBoxContainer2/SliderMaster" to="." method="_on_slider_master_value_changed"]
+[connection signal="value_changed" from="AreaConteudo/PaginaAudio/HBoxContainer3/SliderMusic" to="." method="_on_slider_music_value_changed"]
+[connection signal="value_changed" from="AreaConteudo/PaginaAudio/HBoxContainer4/SliderUi" to="." method="_on_slider_ui_value_changed"]
+[connection signal="toggled" from="AreaConteudo/PaginaAudio/HBoxContainer5/CheckMute" to="." method="_on_check_mute_toggled"]
