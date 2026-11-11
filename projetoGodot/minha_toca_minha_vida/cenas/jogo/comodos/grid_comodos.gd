@@ -10,7 +10,7 @@ var _pos_end_x : Vector2
 var _pos_next_y : Vector2
 
 const max_x : int = 5
-const max_y : int = 10
+const max_y : int = 5 # 10
 const COMODO_BASE = preload("uid://dvqy4auvlk8jy")
 
 var comodos_grid : Dictionary[ComodoBase, Vector2i] = {}
@@ -67,6 +67,10 @@ func get_comodo(grid_pos: Vector2i) -> ComodoBase:
 
 func liberar_comodo(grid_pos: Vector2i) -> void:
 	var comodo : ComodoBase = get_comodo(grid_pos)
+	
+	if not comodo: return
+	if comodo.colocado: return
+	
 	comodos_liberados.append(comodo)
 	comodo.piscar_clicavel()
 
