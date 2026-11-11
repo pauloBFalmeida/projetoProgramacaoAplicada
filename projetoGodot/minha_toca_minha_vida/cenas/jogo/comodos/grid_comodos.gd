@@ -71,7 +71,9 @@ func liberar_comodo(grid_pos: Vector2i) -> void:
 	comodo.piscar_clicavel()
 
 func _bloquear_comodo(comodo : ComodoBase) -> void:
+	comodo.colocado = true
 	comodos_liberados.erase(comodo)
+	#print(comodo.get_parent().name)
 	comodo.mostrar_comodo()
 
 func bloquear_comodo(grid_pos: Vector2i) -> void:
@@ -83,7 +85,7 @@ func bloquear_comodo_area(area: Area2D) -> void:
 	_bloquear_comodo(comodo)
 
 
-func set_piscar_comodos(piscar: bool = true) -> void:
+func set_piscar_comodos(piscar: bool = true) -> void:		
 	for comodo : ComodoBase in comodos_liberados:
 		if piscar:
 			comodo.piscar_clicavel()

@@ -7,11 +7,16 @@ class_name ComodoBase
 @onready var area_2d: Area2D = $Area2D
 
 var tween_piscar : Tween
+var colocado : bool = false
 
 func _ready() -> void:
 	esconder()
 
 func piscar_clicavel() -> void:
+	if colocado: 
+		mostrar_comodo() 
+		return
+	
 	area_2d.monitorable = true
 	
 	sprite_comodo.hide()
@@ -32,11 +37,18 @@ func piscar_clicavel() -> void:
 	)
 
 func esconder() -> void:
+	if colocado: 
+		mostrar_comodo() 
+		return
+	
 	area_2d.monitorable = false
 	sprite_comodo.hide()
 	sprite_borda.hide()
 
 func mostrar_comodo() -> void:
+	#print("mostrar_comodo")
+	colocado = true
+	
 	area_2d.monitorable = false
 	sprite_comodo.show()
 	if tween_piscar.is_running(): tween_piscar.kill()
@@ -44,3 +56,15 @@ func mostrar_comodo() -> void:
 
 func set_textura_comodo(textura: Texture2D) -> void:
 	sprite_comodo.texture = textura
+
+
+func _physics_process(delta: float) -> void:
+	if colocado:
+		mostrar_comodo() 
+		if tween_piscar.is_running(): tween_piscar.kill()
+		tween_piscar = create_tween()
+		tween_piscar.tween_property(
+			sprite_borda, "modulate:a",
+			1.0, 0.01
+		)
+		return
