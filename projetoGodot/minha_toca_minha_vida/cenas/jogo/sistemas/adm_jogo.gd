@@ -63,4 +63,8 @@ func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 	
 	if cartas_colocadas.size() >= grid_comodos.max_x * grid_comodos.max_y:
 		label_end.show()
-	
+
+@onready var label_dinheiro: Label = %LabelDinheiro
+
+func _physics_process(delta: float) -> void:
+	label_dinheiro.text = str(GerenciadorRecursos.dinheiro)

@@ -22,7 +22,13 @@ func adicionar_carta(carta_res: CartaRes) -> void:
 	carta_button.set_carta_res(carta_res)
 	carta_button.pressed.connect(_pegar_carta.bind(carta_button))
 
+const custo_carta := 5
+
 func _pegar_carta(carta_button_clicada : CartaButton) -> void:
+	if GerenciadorRecursos.dinheiro >= custo_carta:
+		GerenciadorRecursos.rem_dinheiro(custo_carta)
+	else:
+		return
 	# mostra todos os comodos
 	for carta_button : CartaButton in cartas_button_lista:
 		carta_button.show()
@@ -76,3 +82,5 @@ func _on_solto_fora(carta_segurada: CartaSegurada) -> void:
 	
 	# deleta a carta segurada
 	carta_segurada.queue_free()
+	
+	GerenciadorRecursos.add_dinheiro(custo_carta)

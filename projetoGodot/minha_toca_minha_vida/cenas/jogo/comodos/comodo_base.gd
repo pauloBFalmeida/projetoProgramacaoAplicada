@@ -57,9 +57,13 @@ func mostrar_comodo() -> void:
 func set_textura_comodo(textura: Texture2D) -> void:
 	sprite_comodo.texture = textura
 
+var geracao_dinheiro_seg := 0.5
 
 func _physics_process(delta: float) -> void:
+	
 	if colocado:
+		GerenciadorRecursos.add_dinheiro(geracao_dinheiro_seg * delta)
+		
 		mostrar_comodo() 
 		if tween_piscar.is_running(): tween_piscar.kill()
 		tween_piscar = create_tween()

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bu3d75pl2esmy" path="res://cenas/jogo/comodos/grid_comodos.tscn" id="5_0xxu0"]
 [ext_resource type="PackedScene" uid="uid://devghcyxloprj" path="res://cenas/jogo/UI/ui_jogo.tscn" id="6_0qu2t"]
 [ext_resource type="PackedScene" uid="uid://dvqy4auvlk8jy" path="res://cenas/jogo/comodos/comodo_base.tscn" id="6_0xxu0"]
+[ext_resource type="Texture2D" uid="uid://6yuta3imc136" path="res://assets/artes/icones/resized_item_moeda.png" id="12_r8fqq"]
 
 [node name="Jogo" type="Node" unique_id=1130431866]
 script = ExtResource("1_tgo76")
@@ -76,6 +77,23 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "FIM DA DEMO"
+
+[node name="ResizedItemMoeda" type="Sprite2D" parent="UI" unique_id=1651912702]
+position = Vector2(31.000008, 33.000008)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_r8fqq")
+
+[node name="LabelDinheiro" type="Label" parent="UI" unique_id=1966383203]
+unique_name_in_owner = true
+offset_left = 56.0
+offset_top = 15.0
+offset_right = 96.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 0.08627451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 25
+text = "20"
 
 [editable path="Mundo/GridComodos"]
 [editable path="UI"]
