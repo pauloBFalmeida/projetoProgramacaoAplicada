@@ -12,7 +12,7 @@ extends Node
 
 const LISTA_CARTAS_COMODOS = preload("uid://de8vnfhq31gcq")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	background.aumentar_ate_cam(camera_2d.global_position)
 
 func _ready() -> void:

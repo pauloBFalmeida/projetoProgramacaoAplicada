@@ -28,8 +28,8 @@ func zoom_posicao(fator_zoom: float, pos_tela: Vector2) -> void:
 	if is_equal_approx(zoom_antigo, zoom_novo): return
 
 	# vai em direcao a onde o zoom foi feito
-	var offset := pos_tela - (get_viewport_rect().size / 2.0)
-	position += offset / zoom_antigo - offset / zoom_novo
+	var _offset := pos_tela - (get_viewport_rect().size / 2.0)
+	position += _offset / zoom_antigo - _offset / zoom_novo
 	
 	zoom = Vector2.ONE * zoom_novo
 	sprite_2d.scale = sprite_2d_scale / zoom
