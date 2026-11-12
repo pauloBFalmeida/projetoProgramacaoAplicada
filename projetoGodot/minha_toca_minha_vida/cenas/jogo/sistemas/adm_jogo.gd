@@ -48,11 +48,9 @@ func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 	comodo.mostrar_comodo()
 	
 	# bloqueia a area para nao colocar outros comodos
-	grid_comodos.bloquear_comodo_area(area)
+	grid_comodos.bloquear_comodo(pos_grid)
 	# liberar comodos ao redor
-	grid_comodos.liberar_comodo(Vector2i(2,1))
-	grid_comodos.liberar_comodo(Vector2i(1,0))
-	grid_comodos.liberar_comodo(Vector2i(3,0))
+	grid_comodos.liberar_redor_comodo(pos_grid)
 	
 	_parar_piscar_comodos()
 

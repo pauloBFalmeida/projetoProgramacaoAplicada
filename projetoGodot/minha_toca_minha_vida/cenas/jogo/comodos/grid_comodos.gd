@@ -17,6 +17,7 @@ var comodos_grid : Dictionary[ComodoBase, Vector2i] = {}
 var comodos_por_pos : Dictionary[Vector2i, ComodoBase] = {}
 
 var comodos_liberados : Array[ComodoBase] = []
+var comodos_bloqueados : Array[ComodoBase] = []
 
 func _ready() -> void:
 	_pos_ini = pos_ini.global_position
@@ -65,7 +66,28 @@ func get_comodo_from_grid_pos(grid_pos: Vector2i) -> ComodoBase:
 		return comodos_por_pos[grid_pos]
 	return null
 
+## Retorna uma lista de posicoes que nao estao bloqueadas ao redor do comodo
+func get_posicoes_redor_validas_comodo(grid_pos: Vector2i) -> Array[Vector2i]:
+	if not comodos_por_pos.has(grid_pos): return []
+	
+	const posicoes_redor : Array[Vector2i] = [
+		Vector2i.UP, Vector2i.DOWN, Vector2i.LEFT, Vector2i.RIGHT
+	]
+	
+	var posicoes_validas_redor : Array[Vector2i] = []
+	
+	# verifica as posicoes do lado do comodo, por comodos validos (existentes e nao bloqueados)
+	for pos_redor: Vector2i in posicoes_redor:
+		var _pos := pos_redor + grid_pos
+		var _comodo := get_comodo_from_grid_pos(_pos) 
+		if _comodo and not comodos_bloqueados.has(_comodo):
+			posicoes_validas_redor.append(_pos)
+	
+	return posicoes_validas_redor
 
+func liberar_redor_comodo(grid_pos: Vector2i) -> void:
+	for _pos : Vector2i in get_posicoes_redor_validas_comodo(grid_pos):
+		liberar_comodo(_pos)
 
 func liberar_comodo(grid_pos: Vector2i) -> void:
 	var comodo : ComodoBase = get_comodo_from_grid_pos(grid_pos)
@@ -74,14 +96,10 @@ func liberar_comodo(grid_pos: Vector2i) -> void:
 
 func _bloquear_comodo(comodo : ComodoBase) -> void:
 	comodos_liberados.erase(comodo)
+	comodos_bloqueados.append(comodo)
 
 func bloquear_comodo(grid_pos: Vector2i) -> void:
 	var comodo : ComodoBase = get_comodo_from_grid_pos(grid_pos)
-	if comodo: 
-		_bloquear_comodo(comodo)
-
-func bloquear_comodo_area(area: Area2D) -> void:
-	var comodo : ComodoBase = get_comodo_from_area(area)
 	if comodo: 
 		_bloquear_comodo(comodo)
 
