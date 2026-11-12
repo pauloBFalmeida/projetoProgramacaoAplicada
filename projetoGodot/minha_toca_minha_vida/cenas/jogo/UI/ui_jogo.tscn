@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d226hfux6licv" path="res://cenas/jogo/UI/movimento_camera.gd" id="1_rtvhy"]
 [ext_resource type="PackedScene" uid="uid://ckpuwpe50du0o" path="res://cenas/jogo/UI/escolha_cartas/menu_cartas.tscn" id="2_5hevb"]
+[ext_resource type="Script" uid="uid://c32jhlir3do5k" path="res://cenas/jogo/UI/button.gd" id="3_s4l40"]
 
 [node name="UI" type="CanvasLayer" unique_id=1303200733]
 
@@ -16,3 +17,15 @@ script = ExtResource("1_rtvhy")
 metadata/_edit_lock_ = true
 
 [node name="MenuCartas" parent="." unique_id=2104424329 instance=ExtResource("2_5hevb")]
+
+[node name="Button" type="Button" parent="." unique_id=198150376]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "Voltar ao Menu"
+script = ExtResource("3_s4l40")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

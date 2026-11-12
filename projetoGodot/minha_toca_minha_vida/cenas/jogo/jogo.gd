@@ -15,9 +15,13 @@ const LISTA_CARTAS_COMODOS = preload("uid://de8vnfhq31gcq")
 func _process(delta: float) -> void:
 	background.aumentar_ate_cam(camera_2d.global_position)
 
+
 func _ready() -> void:
 	escolha_cartas.carta_colocada.connect(_on_carta_colocada)
 	adm_jogo.iniciar()
+	
+	GerenciadorRecursos.dinheiro_sum = 0
+	GerenciadorRecursos.dinheiro = 0
 
 func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
 	var comodo : ComodoBase = grid_comodos.pegar_comodo(area)
