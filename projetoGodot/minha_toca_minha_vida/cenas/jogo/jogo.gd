@@ -16,16 +16,4 @@ func _process(delta: float) -> void:
 	background.aumentar_ate_cam(camera_2d.global_position)
 
 func _ready() -> void:
-	escolha_cartas.carta_colocada.connect(_on_carta_colocada)
 	adm_jogo.iniciar()
-
-func _on_carta_colocada(area: Area2D, carta: CartaRes) -> void:
-	var comodo : ComodoBase = grid_comodos.pegar_comodo(area)
-	
-	if comodo:
-		var textura: Texture2D = carta.imagem
-		comodo.set_textura_comodo(textura)
-		comodo.mostrar_comodo()
-		
-		var pos_grid: Vector2i = grid_comodos.get_grid_pos(comodo)
-		adm_grafo_comodos.colocar_comodo(carta, pos_grid)

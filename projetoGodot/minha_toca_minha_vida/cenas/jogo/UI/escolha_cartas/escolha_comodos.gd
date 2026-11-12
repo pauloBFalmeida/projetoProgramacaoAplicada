@@ -1,6 +1,8 @@
 class_name EscolhaCartas
 extends Control
 
+signal carta_pega
+signal carta_cancelada
 signal carta_colocada(area: Area2D, carta: CartaRes)
 
 @export var mundo: Node2D
@@ -26,10 +28,12 @@ func _pegar_carta(carta_button_clicada : CartaButton) -> void:
 	# mostra todos os comodos
 	for carta_button : CartaButton in cartas_button_lista:
 		carta_button.show()
-	
+	# esconde a carta clicada
 	if carta_button_clicada:
 		carta_button_clicada.hide()
 		_criar_carta_pega(carta_button_clicada)
+		# emite o sinal de pega
+		carta_pega.emit()
 
 func _on_h_box_gui_input(event: InputEvent) -> void:
 	if (
@@ -76,3 +80,5 @@ func _on_solto_fora(carta_segurada: CartaSegurada) -> void:
 	
 	# deleta a carta segurada
 	carta_segurada.queue_free()
+	
+	carta_cancelada.emit()

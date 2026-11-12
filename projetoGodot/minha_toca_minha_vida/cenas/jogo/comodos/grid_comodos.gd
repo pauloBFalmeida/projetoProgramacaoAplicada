@@ -49,38 +49,41 @@ func _criar_grid() -> void:
 			#comodo.piscar_clicavel()
 			
 
-func pegar_comodo(area: Area2D) -> ComodoBase:
+func get_comodo_from_area(area: Area2D) -> ComodoBase:
 	for comodo : ComodoBase in comodos_grid.keys():
 		if comodo.area_2d == area:
 			return comodo
 	return null
 
-func get_grid_pos(comodo: ComodoBase) -> Vector2i:
+func get_grid_pos_from_comodo(comodo: ComodoBase) -> Vector2i:
 	if comodos_grid.has(comodo):
 		return comodos_grid[comodo]
 	return Vector2i.MIN
 
-func get_comodo(grid_pos: Vector2i) -> ComodoBase:
+func get_comodo_from_grid_pos(grid_pos: Vector2i) -> ComodoBase:
 	if comodos_por_pos.has(grid_pos):
 		return comodos_por_pos[grid_pos]
 	return null
 
+
+
 func liberar_comodo(grid_pos: Vector2i) -> void:
-	var comodo : ComodoBase = get_comodo(grid_pos)
-	comodos_liberados.append(comodo)
-	comodo.piscar_clicavel()
+	var comodo : ComodoBase = get_comodo_from_grid_pos(grid_pos)
+	if comodo:
+		comodos_liberados.append(comodo)
 
 func _bloquear_comodo(comodo : ComodoBase) -> void:
 	comodos_liberados.erase(comodo)
-	comodo.mostrar_comodo()
 
 func bloquear_comodo(grid_pos: Vector2i) -> void:
-	var comodo : ComodoBase = get_comodo(grid_pos)
-	_bloquear_comodo(comodo)
+	var comodo : ComodoBase = get_comodo_from_grid_pos(grid_pos)
+	if comodo: 
+		_bloquear_comodo(comodo)
 
 func bloquear_comodo_area(area: Area2D) -> void:
-	var comodo : ComodoBase = pegar_comodo(area)
-	_bloquear_comodo(comodo)
+	var comodo : ComodoBase = get_comodo_from_area(area)
+	if comodo: 
+		_bloquear_comodo(comodo)
 
 
 func set_piscar_comodos(piscar: bool = true) -> void:
