@@ -12,14 +12,10 @@ extends Resource
 ##
 @export var nivel_desbloqueio : int = 1
 ##
-@export var preco_desbloqueio : int = 5
+@export var preco_desbloqueio := GerenciadorRecursos.Qntd.BAIXO
 
-@export_category("Atributos Construção")
+@export_category("Atributos Geração")
 
-@export var recurso_construcao : Dictionary[GerenciadorRecursos.Recurso, int] = {
-	GerenciadorRecursos.Recurso.MOEDAS: 50
-}
+@export var recurso_recebido : Dictionary[GerenciadorRecursos.Recurso, GerenciadorRecursos.Qntd] = {}
 
-@export var recurso_gerado : Dictionary[GerenciadorRecursos.Recurso, int] = {
-	GerenciadorRecursos.Recurso.MOEDAS: 10
-}
+@export var recurso_gerado : Dictionary[GerenciadorRecursos.Recurso, GerenciadorRecursos.Qntd] = {}

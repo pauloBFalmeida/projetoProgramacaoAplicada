@@ -7,5 +7,11 @@
 script = ExtResource("2_a6sqv")
 nome = "Biblioteca"
 imagem = ExtResource("1_1djm8")
-recurso_gerado = 2
+recurso_recebido = Dictionary[int, int]({
+0: 1,
+1: 0
+})
+recurso_gerado = Dictionary[int, int]({
+4: 1
+})
 metadata/_custom_type_script = "uid://t5e33585bkg7"

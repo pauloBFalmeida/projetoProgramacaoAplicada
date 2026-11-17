@@ -1,3 +1,5 @@
+## [b]Gerenciador de Recursos[/b][br]
+## Gere os recursos durante o jogo
 extends Node
 
 enum Recurso {
@@ -5,8 +7,21 @@ enum Recurso {
 	MOEDAS,
 	LAZER,
 	COMIDA,
-	PEDRA,
-	MADEIRA
+	CONHECIMENTO,
+	#PEDRA,
+	#MADEIRA
+}
+
+enum Qntd {
+	BAIXO,
+	MEDIO,
+	ALTO,
+}
+
+const qntd_para_numero := {
+	Qntd.BAIXO: 2,
+	Qntd.MEDIO: 3,
+	Qntd.ALTO:  4,
 }
 
 var recursos_atuais : Dictionary[Recurso, int] = {}

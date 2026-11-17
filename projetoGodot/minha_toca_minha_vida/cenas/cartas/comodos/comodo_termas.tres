@@ -8,4 +8,12 @@ script = ExtResource("2_mr46s")
 nome = "Fontes Termais"
 imagem = ExtResource("1_ctcv6")
 nivel_desbloqueio = 2
+preco_desbloqueio = 1
+recurso_recebido = Dictionary[int, int]({
+0: 1,
+3: 0
+})
+recurso_gerado = Dictionary[int, int]({
+2: 1
+})
 metadata/_custom_type_script = "uid://t5e33585bkg7"

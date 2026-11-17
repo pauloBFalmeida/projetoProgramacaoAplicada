@@ -8,4 +8,13 @@ script = ExtResource("2_boyi3")
 nome = "Atelie"
 imagem = ExtResource("1_1ktwc")
 nivel_desbloqueio = 2
+preco_desbloqueio = 2
+recurso_recebido = Dictionary[int, int]({
+0: 1
+})
+recurso_gerado = Dictionary[int, int]({
+1: 0,
+2: 2,
+4: 0
+})
 metadata/_custom_type_script = "uid://t5e33585bkg7"
