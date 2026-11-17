@@ -6,7 +6,7 @@ class_name GridComodos
 @export var pos_next_y : Node2D
 
 const MAX_X : int = 5
-const MAX_Y : int = 3
+const MAX_Y : int = 20
 
 const POS_CARTA_INICIAL := Vector2i(2, 0)
 
