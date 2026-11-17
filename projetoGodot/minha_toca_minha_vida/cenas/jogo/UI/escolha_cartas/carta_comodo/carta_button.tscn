@@ -61,3 +61,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_v0fnb")
 expand_mode = 2
+
+[node name="TimerVerificaSegurado" type="Timer" parent="." unique_id=1641916140]
+one_shot = true

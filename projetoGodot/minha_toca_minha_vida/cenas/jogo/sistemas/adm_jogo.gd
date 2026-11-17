@@ -44,6 +44,8 @@ func _ready() -> void:
 	escolha_cartas.carta_cancelada.connect(grid_comodos.esconder_recursos)
 	escolha_cartas.carta_colocada.connect(grid_comodos.esconder_recursos.unbind(2))
 	
+	escolha_cartas.clicou_carta.connect(_mostar_info_carta)
+	
 	escolha_cartas.sem_cartas.connect(_on_sem_cartas)
 
 func iniciar() -> void:
@@ -122,6 +124,8 @@ func _fill_cartas_ate_nivel_atual() -> void:
 	
 	cartas_comodo_ate_niveis_atual.shuffle()
 
+# Mostar informacoes
+# -----------------------------------------------------------------------------
 
 func _mostrar_recursos_comodos(_carta_pega: CartaRes) -> void:
 	var recursos : Array[GerenciadorRecursos.Recurso] = _carta_pega.recurso_recebido.keys()
@@ -135,3 +139,8 @@ func _mostrar_recursos_comodos(_carta_pega: CartaRes) -> void:
 			var qtd := adm_grafo_comodos.get_quantidade(_pos_grid, _recurso)
 			_recurso_qtd[_recurso] = qtd
 		comodo.mostrar_recursos(_recurso_qtd)
+
+func _mostar_info_carta(_carta: CartaRes) -> void:
+	print("INFO DA CARTAAAA")
+	print("nome: ", _carta.nome)
+	

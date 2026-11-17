@@ -5,6 +5,8 @@ signal carta_pega(carta: CartaRes)
 signal carta_cancelada
 signal carta_colocada(area: Area2D, carta: CartaRes)
 
+signal clicou_carta(carta: CartaRes)
+
 signal sem_cartas
 
 @export var mundo: Node2D
@@ -18,13 +20,24 @@ var carta_button_por_carta_pega : Dictionary[CartaSegurada, CartaButton] = {}
 const COMODO_PEGO = preload("uid://xsse3gj2oavy")
 const CARTA_BUTTON = preload("uid://bt4hb2p4wi1so")
 
+
 func adicionar_carta(carta_res: CartaRes) -> void:
 	var carta_button := CARTA_BUTTON.instantiate() as CartaButton
 	cartas_button_lista.append(carta_button)
 	h_box_cartas.add_child(carta_button)
 	
 	carta_button.set_carta_res(carta_res)
-	carta_button.pressed.connect(_pegar_carta.bind(carta_button))
+	carta_button.clicado_rapido.connect(_carta_clicada.bind(carta_button))
+	carta_button.esta_segurado.connect(_carta_segurando.bind(carta_button))
+
+
+
+func _carta_clicada(carta_button_clicada : CartaButton) -> void:
+	if carta_button_clicada:
+		clicou_carta.emit(carta_button_clicada.get_carta())
+
+func _carta_segurando(carta_button_clicada : CartaButton) -> void:
+	_pegar_carta(carta_button_clicada)
 
 func _pegar_carta(carta_button_clicada : CartaButton) -> void:
 	# mostra todos os comodos
