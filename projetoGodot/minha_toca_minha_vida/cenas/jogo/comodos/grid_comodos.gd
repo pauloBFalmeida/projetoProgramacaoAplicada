@@ -55,6 +55,9 @@ func disponibilizar_vizinhos(comodo : ComodoBase) -> void:
 		if not vizinho.ocupado:
 			vizinho.disponivel = true
 
+func get_comodos_ocupados() -> Array[ComodoBase]:
+	return comodos_por_pos.values().filter(func(comodo: ComodoBase): return comodo.ocupado)
+
 # Posicoes de comodos disponiveis
 # -----------------------------------------------------------------------------
 
@@ -69,3 +72,11 @@ func esconder_posicoes() -> void:
 	for comodo : ComodoBase in comodos_por_pos.values():
 		if comodo.disponivel:
 			comodo.esconder()
+
+# Recursos nos comodos
+# -----------------------------------------------------------------------------
+
+func esconder_recursos() -> void:
+	for comodo : ComodoBase in comodos_por_pos.values():
+		if comodo.ocupado:
+			comodo.esconder_recursos()

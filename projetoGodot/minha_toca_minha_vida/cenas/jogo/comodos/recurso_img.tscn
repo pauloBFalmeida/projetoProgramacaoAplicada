@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bsfhhtfs31n3y"]
+
+[ext_resource type="Texture2D" uid="uid://c243uodnmib0f" path="res://assets/artes/icones/resized_item_coracao.png" id="1_yktg3"]
+[ext_resource type="Script" uid="uid://dwnslmr1aq7p2" path="res://cenas/jogo/comodos/recurso_img.gd" id="2_kp0ny"]
+
+[node name="RecursoImagem" type="Sprite2D" unique_id=322687412]
+z_index = 2
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_yktg3")
+script = ExtResource("2_kp0ny")

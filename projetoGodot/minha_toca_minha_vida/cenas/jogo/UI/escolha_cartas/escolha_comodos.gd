@@ -1,7 +1,7 @@
 class_name EscolhaCartas
 extends Control
 
-signal carta_pega
+signal carta_pega(carta: CartaRes)
 signal carta_cancelada
 signal carta_colocada(area: Area2D, carta: CartaRes)
 
@@ -35,7 +35,7 @@ func _pegar_carta(carta_button_clicada : CartaButton) -> void:
 		carta_button_clicada.hide()
 		_criar_carta_pega(carta_button_clicada)
 		# emite o sinal de pega
-		carta_pega.emit()
+		carta_pega.emit(carta_button_clicada.get_carta())
 
 func _on_h_box_gui_input(event: InputEvent) -> void:
 	if (

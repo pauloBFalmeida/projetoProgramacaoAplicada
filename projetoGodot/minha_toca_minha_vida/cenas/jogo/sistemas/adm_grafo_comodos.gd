@@ -17,6 +17,9 @@ func _on_grafo_atualizado() -> void:
 	#for pos in grafo.comodos:
 		#print(pos, " Moradia=", grafo.quantidade(pos, GerenciadorRecursos.Recurso.MORADIA))
 
+func get_quantidade(pos_grid: Vector2i, recurso: GerenciadorRecursos.Recurso) -> int:
+	return grafo.quantidade(pos_grid, recurso)
+
 # Nodo Comodo
 # -----------------------------------------------------------------------------
 

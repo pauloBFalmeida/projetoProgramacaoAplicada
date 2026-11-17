@@ -5,6 +5,13 @@ class_name ComodoBase
 @onready var sprite_comodo: Sprite2D = $SpriteComodo
 @onready var area_2d: Area2D = $Area2D
 
+const distancia_recursos := Vector2(45.0, 50.0)
+const RECURSO_IMG = preload("uid://bsfhhtfs31n3y")
+const MAX_RECURSOS := 4
+
+var pai_recursos : Node2D
+var recursos_imgs_por_linha : Dictionary[int, Array]
+
 var grid_pos : Vector2i
 var ocupado : bool = false
 var disponivel : bool = false
@@ -13,6 +20,7 @@ var tween_piscar : Tween
 
 func _ready() -> void:
 	esconder()
+	_criar_recursos()
 	#name = "ComodoBase(%d, %d)" % [grid_pos.x, grid_pos.y]
 
 ## Mostra a borda piscando (posicao disponivel para receber um comodo)
@@ -52,3 +60,47 @@ func ocupar(textura: Texture2D) -> void:
 func _parar_tween() -> void:
 	if tween_piscar and tween_piscar.is_valid():
 		tween_piscar.kill()
+
+# -----------------------------------------------------------------------------
+func _criar_recursos() -> void:
+	pai_recursos = Node2D.new()
+	add_child(pai_recursos)
+	pai_recursos.hide()
+	
+	recursos_imgs_por_linha = {
+		0: [],
+		1: []
+	}
+	
+	for y in [-1,1]:
+		for x in range(MAX_RECURSOS):
+			var _recurso := RECURSO_IMG.instantiate() as RecursoImagem
+			pai_recursos.add_child(_recurso)
+			_recurso.position.y = y * distancia_recursos.y/2
+			_recurso.position.x = (x - 1.5) * distancia_recursos.x 
+			#
+			var linha = 0 if y == -1 else 1
+			recursos_imgs_por_linha[linha].append(_recurso)
+
+func esconder_recursos() -> void:
+	pai_recursos.hide()
+
+func mostrar_recursos(recursos_qtd: Dictionary[GerenciadorRecursos.Recurso, int]) -> void:
+	# esconde todos os filhos, ja que ao ajustar a textura mostra somente os que tem textura
+	for c in pai_recursos.get_children(): c.hide()
+	
+	var recursos : Array[GerenciadorRecursos.Recurso] = recursos_qtd.keys()
+	
+	var tamanho : int = min(recursos.size(), 2)
+	
+	for linha in range(tamanho): # 0, 1
+		var _recurso : GerenciadorRecursos.Recurso = recursos.get(linha)
+		var _qtde : int = recursos_qtd.get(_recurso, 0)
+		
+		_qtde = min(_qtde, MAX_RECURSOS) # limite max
+		# ajusta a quantidade de recusos
+		for i in range(_qtde):
+			var _recurso_img = recursos_imgs_por_linha[linha].get(i)
+			_recurso_img.set_recurso(_recurso)
+	
+	pai_recursos.show()
