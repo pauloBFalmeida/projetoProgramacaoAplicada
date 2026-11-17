@@ -47,12 +47,12 @@ class NodoComodo:
 
 	## Guarda o valor so se for maior que o atual [br]
 	## Retorna true se mudou, e false se nao houve alteracao
-	func receber(recurso: GerenciadorRecursos.Recurso, qtd: int) -> bool:
+	func receber(recurso: GerenciadorRecursos.Recurso, valor: int) -> bool:
 		# se recebe menos ou igual do que tinha, nao altere
-		if qtd <= quantidade(recurso): 
+		if valor <= quantidade(recurso): 
 			return false
 		# se recebe mais, altere
-		qtd_recursos[recurso] = qtd
+		qtd_recursos[recurso] = valor
 		return true
 	
 	func emitir_alterado() -> void:
@@ -137,8 +137,10 @@ class GrafoComodos:
 	func _espalhar(origem: Vector2i, valores: Dictionary, alterados: Dictionary) -> void:
 		var nodo_origem := comodos[origem]
 
-		for recurso in valores:
-			if not nodo_origem.receber(recurso, valores[recurso]):
+		for recurso : GerenciadorRecursos.Recurso in valores.keys():
+			var _qtde = valores[recurso]
+			var _valor : int = GerenciadorRecursos.get_valor_recurso_recebido(recurso, _qtde)
+			if not nodo_origem.receber(recurso, _valor):
 				continue
 			alterados[nodo_origem] = true
 

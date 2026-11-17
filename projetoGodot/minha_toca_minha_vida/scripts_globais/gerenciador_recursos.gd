@@ -33,3 +33,19 @@ func _ready() -> void:
 func load_dados() -> void:
 	for recurso in Recurso.values():
 		recursos_atuais[recurso] = 0
+
+
+# Get Valor de Recurso
+# -----------------------------------------------------------------------------
+
+func get_valor_recurso_recebido(_recurso: Recurso, _qtde: Qntd) -> int:
+	var _valor := _get_valor_recurso(_recurso, _qtde)
+	return _valor - 1
+
+func get_valor_recurso_gerado(_recurso: Recurso, _qtde: Qntd) -> int:
+	return _get_valor_recurso(_recurso, _qtde)
+	
+func _get_valor_recurso(_recurso: Recurso, _qtde: Qntd) -> int:
+	if qntd_para_numero.has(_recurso):
+		return qntd_para_numero[_qtde]
+	return 0
