@@ -20,8 +20,9 @@ const QTD_CARTAS_MAO : int = 5
 ## Value: o nivel que sera vai virar [br]
 ## Exemplo: 50: 5, ao colocar a 50 carta vai comecar o nivel 5
 @export var nivel_por_qtd_cartas : Dictionary[int, int] = {
-	1: 1, 
-	5: 2,
+	1: 		1, 
+	5: 		2,
+	10: 	3,
 }
 
 var cartas_comodo_por_nivel : Dictionary[int, Array] = {}
@@ -34,6 +35,8 @@ func _ready() -> void:
 	escolha_cartas.carta_pega.connect(grid_comodos.mostrar_posicoes_disponiveis)
 	escolha_cartas.carta_cancelada.connect(grid_comodos.esconder_posicoes)
 	escolha_cartas.carta_colocada.connect(_on_carta_colocada)
+	
+	escolha_cartas.sem_cartas.connect(_on_sem_cartas)
 
 func iniciar() -> void:
 	cartas_comodo_por_nivel.clear()
@@ -78,3 +81,10 @@ func _prox_nivel() -> void:
 	nivel_atual = nivel_por_qtd_cartas[cartas_colocadas]
 	
 	avancou_nivel.emit()
+
+# Sem Cartas
+# -----------------------------------------------------------------------------
+
+func _on_sem_cartas() -> void:
+	for i in range(10):
+		escolha_cartas.adicionar_carta(carta_comodo_inicial)

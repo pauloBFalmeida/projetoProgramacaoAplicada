@@ -5,6 +5,8 @@ signal carta_pega
 signal carta_cancelada
 signal carta_colocada(area: Area2D, carta: CartaRes)
 
+signal sem_cartas
+
 @export var mundo: Node2D
 
 @onready var h_box_cartas: HBoxContainer = %HBoxCartas
@@ -72,6 +74,10 @@ func _on_solto_em_area(area: Area2D, carta_segurada: CartaSegurada) -> void:
 	
 	# deleta a carta segurada
 	carta_segurada.queue_free()
+	
+	# verifica se acabou as cartas da mao
+	if cartas_button_lista.is_empty():
+		sem_cartas.emit()
 
 func _on_solto_fora(carta_segurada: CartaSegurada) -> void:
 	# mostra a carta novamente
