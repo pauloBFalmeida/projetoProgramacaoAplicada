@@ -96,7 +96,11 @@ class GrafoComodos:
 		var nodo := NodoComodo.new(pos, carta)
 		comodos[pos] = nodo
 		# calcula o que ele gera, e adiciona o melhor que cada vizinho gera -1
-		var _recursos: Dictionary = carta.recurso_gerado.duplicate()
+		var _recursos: Dictionary[GerenciadorRecursos.Recurso, int] = {}
+		for recurso in carta.recurso_gerado.keys():
+			var _qtde := carta.recurso_gerado[recurso]
+			_recursos[recurso] = GerenciadorRecursos.get_valor_recurso_gerado(recurso, _qtde)
+		
 		for vizinho_pos in vizinhos_pos(pos):
 			var _vizinho : NodoComodo = comodos[vizinho_pos]
 			# pega os recursos que cada vizinho tem
@@ -137,10 +141,8 @@ class GrafoComodos:
 	func _espalhar(origem: Vector2i, valores: Dictionary, alterados: Dictionary) -> void:
 		var nodo_origem := comodos[origem]
 
-		for recurso : GerenciadorRecursos.Recurso in valores.keys():
-			var _qtde = valores[recurso]
-			var _valor : int = GerenciadorRecursos.get_valor_recurso_recebido(recurso, _qtde)
-			if not nodo_origem.receber(recurso, _valor):
+		for recurso in valores:
+			if not nodo_origem.receber(recurso, valores[recurso]):
 				continue
 			alterados[nodo_origem] = true
 
