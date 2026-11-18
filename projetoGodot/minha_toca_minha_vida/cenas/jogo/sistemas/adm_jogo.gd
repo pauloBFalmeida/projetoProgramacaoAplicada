@@ -6,9 +6,10 @@ signal avancou_nivel
 const QTD_CARTAS_MAO : int = 5
 
 @export_group("Nodos")
+@export var grid_comodos: GridComodos
 @export var adm_grafo_comodos: AdmGrafoComodos
 @export var escolha_cartas: EscolhaCartas
-@export var grid_comodos: GridComodos
+@export var info_carta: InfoCarta
 
 @export_group("Resources")
 @export var lista_cartas_comodos : ListaCartas
@@ -45,6 +46,7 @@ func _ready() -> void:
 	escolha_cartas.carta_colocada.connect(grid_comodos.esconder_recursos.unbind(2))
 	
 	escolha_cartas.clicou_carta.connect(_mostar_info_carta)
+	escolha_cartas.carta_pega.connect(_esconder_info_carta.unbind(1))
 	
 	escolha_cartas.sem_cartas.connect(_on_sem_cartas)
 
@@ -141,6 +143,7 @@ func _mostrar_recursos_comodos(_carta_pega: CartaRes) -> void:
 		comodo.mostrar_recursos(_recurso_qtd)
 
 func _mostar_info_carta(_carta: CartaRes) -> void:
-	print("INFO DA CARTAAAA")
-	print("nome: ", _carta.nome)
-	
+	info_carta.mostrar(_carta)
+
+func _esconder_info_carta() -> void:
+	info_carta.esconder()

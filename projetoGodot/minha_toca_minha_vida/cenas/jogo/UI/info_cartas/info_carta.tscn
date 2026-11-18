@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://ck3ee6pwrs6u3"]
+
+[ext_resource type="Shader" uid="uid://cjgtevb26fyl3" path="res://cenas/jogo/UI/escolha_cartas/ui_canto_redondo.gdshader" id="1_2tfaf"]
+[ext_resource type="Script" uid="uid://cvpmtx7tfd5uf" path="res://cenas/jogo/UI/info_cartas/info_carta.gd" id="1_cf0gj"]
+[ext_resource type="Texture2D" uid="uid://bjwy2c5nqcvo1" path="res://assets/artes/comodos/resized_comodo_quarto.png" id="2_dr6ch"]
+[ext_resource type="Texture2D" uid="uid://bgtcu7prmpoqv" path="res://assets/artes/icones/resized_item_comida.png" id="3_cf0gj"]
+[ext_resource type="PackedScene" uid="uid://5vwist4yl1rk" path="res://cenas/jogo/UI/info_cartas/texture_recurso.tscn" id="4_sjrvp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smq05"]
+shader = ExtResource("1_2tfaf")
+shader_parameter/radius_top = 16.0
+shader_parameter/radius_bottom = 16.0
+
+[node name="InfoCarta" type="Control" unique_id=193280476]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -351.0
+offset_top = -187.0
+offset_right = 351.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cf0gj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=368539650]
+self_modulate = Color(0, 0, 0, 0.4627451)
+material = SubResource("ShaderMaterial_smq05")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1484833028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1198592663]
+layout_mode = 2
+
+[node name="TextureComodo" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=658197975]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_dr6ch")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=877312105]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/HBoxContainer/Control" unique_id=904475947]
+self_modulate = Color(0, 0, 0, 0.23529412)
+material = SubResource("ShaderMaterial_smq05")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -18.0
+offset_right = -1.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelNome" type="Label" parent="MarginContainer/HBoxContainer/Control" unique_id=972973244]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 323.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 30
+text = "Nome"
+
+[node name="LabelProd" type="Label" parent="MarginContainer/HBoxContainer/Control" unique_id=984582078]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 323.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 20
+text = "Produz:"
+
+[node name="HBoxProd" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Control/LabelProd" unique_id=2084129234]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 31.0
+offset_right = 302.0
+offset_bottom = 80.0
+
+[node name="TextureRecurso" parent="MarginContainer/HBoxContainer/Control/LabelProd/HBoxProd" unique_id=1669974750 instance=ExtResource("4_sjrvp")]
+layout_mode = 2
+
+[node name="LabelPrecisa" type="Label" parent="MarginContainer/HBoxContainer/Control" unique_id=955017042]
+layout_mode = 0
+offset_top = 162.0
+offset_right = 323.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 20
+text = "Precisa:"
+
+[node name="HBoxPrecisa" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Control/LabelPrecisa" unique_id=1274926147]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 31.0
+offset_right = 302.0
+offset_bottom = 80.0
+
+[node name="Texture" type="TextureRect" parent="MarginContainer/HBoxContainer/Control/LabelPrecisa/HBoxPrecisa" unique_id=2133065371]
+layout_mode = 2
+texture = ExtResource("3_cf0gj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ButtonX" type="Button" parent="." unique_id=1297829032]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = 16.0
+offset_right = -25.0
+offset_bottom = 59.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = " X "
+
+[connection signal="pressed" from="ButtonX" to="." method="_on_button_x_pressed"]

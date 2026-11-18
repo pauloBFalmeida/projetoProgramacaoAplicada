@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://5vwist4yl1rk"]
+
+[ext_resource type="Texture2D" uid="uid://bgtcu7prmpoqv" path="res://assets/artes/icones/resized_item_comida.png" id="1_o1niy"]
+
+[node name="TextureRecurso" type="TextureRect" unique_id=1669974750]
+texture = ExtResource("1_o1niy")
+expand_mode = 2
+stretch_mode = 5

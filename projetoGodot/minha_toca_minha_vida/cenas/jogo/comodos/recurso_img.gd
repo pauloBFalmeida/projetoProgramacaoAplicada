@@ -9,12 +9,12 @@ const ITEM_MORADIA = preload("uid://b17uoqljqex0o")
 
 func set_recurso(_recurso : GerenciadorRecursos.Recurso) -> void:
 	if _recurso != null:
-		texture = _get_texture_recurso(_recurso)
+		texture = get_texture_recurso(_recurso)
 		show()
 	else:
 		hide()
 
-func _get_texture_recurso(_recurso : GerenciadorRecursos.Recurso) -> Texture2D:
+static func get_texture_recurso(_recurso : GerenciadorRecursos.Recurso) -> Texture2D:
 	match _recurso:
 		GerenciadorRecursos.Recurso.MORADIA:
 			return ITEM_MORADIA

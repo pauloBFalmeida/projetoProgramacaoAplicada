@@ -15,11 +15,12 @@
 [node name="Jogo" type="Node" unique_id=1130431866]
 script = ExtResource("1_tgo76")
 
-[node name="AdmJogo" type="Node" parent="." unique_id=2143289827 node_paths=PackedStringArray("adm_grafo_comodos", "escolha_cartas", "grid_comodos")]
+[node name="AdmJogo" type="Node" parent="." unique_id=2143289827 node_paths=PackedStringArray("grid_comodos", "adm_grafo_comodos", "escolha_cartas", "info_carta")]
 script = ExtResource("2_k85cr")
+grid_comodos = NodePath("../Mundo/GridComodos")
 adm_grafo_comodos = NodePath("../AdmGrafoComodos")
 escolha_cartas = NodePath("../UI/MenuCartas/EscolhaCartas")
-grid_comodos = NodePath("../Mundo/GridComodos")
+info_carta = NodePath("../UI/InfoCarta")
 lista_cartas_comodos = ExtResource("3_r8fqq")
 carta_comodo_inicial = ExtResource("4_0483k")
 
