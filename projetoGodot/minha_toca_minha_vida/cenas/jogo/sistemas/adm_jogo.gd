@@ -4,7 +4,7 @@ extends Node
 signal avancou_nivel(novo_nivel: int)
 signal terminou_jogo
 
-const QTD_CARTAS_MAO : int = 5
+const QTD_CARTAS_MAO : int = 4
 
 @export_group("Nodos")
 @export var grid_comodos: GridComodos
