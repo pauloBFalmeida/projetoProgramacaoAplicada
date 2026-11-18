@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://clchghhc7g57k"]
 
 [ext_resource type="Script" uid="uid://dnqqmy32gtwaj" path="res://cenas/menu_inicial/scripts/main_menu.gd" id="1_lgwnu"]
-[ext_resource type="Texture2D" uid="uid://bh1uly8115gkx" path="res://assets/ui/buttons/7.png" id="2_flqon"]
 [ext_resource type="Texture2D" uid="uid://lxcuom43e1pk" path="res://assets/ui/background.jpg" id="2_rcqid"]
+[ext_resource type="Texture2D" uid="uid://bc0vn6hybr5jv" path="res://assets/ui/botoes/inicio.png" id="3_87mgp"]
 [ext_resource type="Texture2D" uid="uid://dqro5ufbf3cgy" path="res://assets/ui/buttons/8.png" id="3_rcqid"]
-[ext_resource type="Texture2D" uid="uid://dacu40s4xrgl6" path="res://assets/ui/buttons/5.png" id="4_1ajci"]
 [ext_resource type="Texture2D" uid="uid://moybk0kd11ds" path="res://assets/ui/buttons/6.png" id="5_7b55j"]
-[ext_resource type="Texture2D" uid="uid://s6cp26seh7kq" path="res://assets/ui/buttons/OPÇÕES_NORM.png" id="6_5pajh"]
+[ext_resource type="Texture2D" uid="uid://p8d576ep1ela" path="res://assets/ui/botoes/saves.png" id="5_jhnbb"]
 [ext_resource type="Texture2D" uid="uid://btvvqvlfsmdbp" path="res://assets/ui/buttons/4.png" id="7_j7ex8"]
-[ext_resource type="Texture2D" uid="uid://bma52p56w2mxu" path="res://assets/ui/buttons/11.png" id="8_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://xhj5yir36q8f" path="res://assets/ui/botoes/opções.png" id="7_rxpak"]
 [ext_resource type="Texture2D" uid="uid://b0vb7uy0l7f7b" path="res://assets/ui/buttons/12.png" id="9_hstxw"]
-[ext_resource type="Texture2D" uid="uid://ck7fq3tj5y0n8" path="res://assets/ui/buttons/9.png" id="10_8egab"]
+[ext_resource type="Texture2D" uid="uid://dsspvag3aojhk" path="res://assets/ui/botoes/creditos.png" id="9_rtres"]
+[ext_resource type="Texture2D" uid="uid://b47hvdgjj7efi" path="res://assets/ui/botoes/sair.png" id="11_3q7lg"]
 [ext_resource type="Texture2D" uid="uid://boxm06bwarl1" path="res://assets/ui/buttons/10.png" id="11_gw5y6"]
 
 [node name="MainMenu" type="Control" unique_id=130093890]
@@ -70,7 +70,7 @@ theme_override_constants/separation = 25
 custom_minimum_size = Vector2(500, 100)
 custom_maximum_size = Vector2(-1, 90)
 layout_mode = 2
-texture_normal = ExtResource("2_flqon")
+texture_normal = ExtResource("3_87mgp")
 texture_pressed = ExtResource("3_rcqid")
 texture_hover = ExtResource("3_rcqid")
 texture_focused = ExtResource("3_rcqid")
@@ -80,7 +80,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(500, 140)
 custom_maximum_size = Vector2(-1, 80)
 layout_mode = 2
-texture_normal = ExtResource("4_1ajci")
+texture_normal = ExtResource("5_jhnbb")
 texture_pressed = ExtResource("5_7b55j")
 texture_hover = ExtResource("5_7b55j")
 texture_focused = ExtResource("5_7b55j")
@@ -90,7 +90,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(500, 140)
 custom_maximum_size = Vector2(-1, 80)
 layout_mode = 2
-texture_normal = ExtResource("6_5pajh")
+texture_normal = ExtResource("7_rxpak")
 texture_pressed = ExtResource("7_j7ex8")
 texture_hover = ExtResource("7_j7ex8")
 texture_focused = ExtResource("7_j7ex8")
@@ -100,7 +100,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(500, 140)
 custom_maximum_size = Vector2(-1, 80)
 layout_mode = 2
-texture_normal = ExtResource("8_a8gd2")
+texture_normal = ExtResource("9_rtres")
 texture_pressed = ExtResource("9_hstxw")
 texture_hover = ExtResource("9_hstxw")
 texture_focused = ExtResource("9_hstxw")
@@ -110,7 +110,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(500, 140)
 custom_maximum_size = Vector2(-1, 80)
 layout_mode = 2
-texture_normal = ExtResource("10_8egab")
+texture_normal = ExtResource("11_3q7lg")
 texture_pressed = ExtResource("11_gw5y6")
 texture_hover = ExtResource("11_gw5y6")
 texture_focused = ExtResource("11_gw5y6")
