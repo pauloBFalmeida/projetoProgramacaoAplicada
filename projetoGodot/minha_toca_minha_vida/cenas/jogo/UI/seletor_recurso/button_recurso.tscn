@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ddtaxl2d4lovp"]
+
+[ext_resource type="Texture2D" uid="uid://bgtcu7prmpoqv" path="res://assets/artes/icones/resized_item_comida.png" id="1_6bsa8"]
+
+[node name="ButtonRecurso" type="Button" unique_id=297871678]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/icon_normal_color = Color(0.74, 0.74, 0.74, 1)
+toggle_mode = true
+icon = ExtResource("1_6bsa8")
+flat = true
+icon_alignment = 1
+expand_icon = true

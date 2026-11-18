@@ -10,6 +10,7 @@ const QTD_CARTAS_MAO : int = 5
 @export var adm_grafo_comodos: AdmGrafoComodos
 @export var escolha_cartas: EscolhaCartas
 @export var info_carta: InfoCarta
+@export var seletor_recurso: SeletorRecurso
 
 @export_group("Resources")
 @export var lista_cartas_comodos : ListaCartas
@@ -49,6 +50,9 @@ func _ready() -> void:
 	escolha_cartas.carta_pega.connect(_esconder_info_carta.unbind(1))
 	
 	escolha_cartas.sem_cartas.connect(_on_sem_cartas)
+	
+	seletor_recurso.mostrar_recurso.connect(_mostrar_um_recurso)
+	seletor_recurso.esconder_recurso.connect(grid_comodos.esconder_recursos)
 
 func iniciar() -> void:
 	cartas_comodo_por_nivel.clear()
@@ -126,7 +130,7 @@ func _fill_cartas_ate_nivel_atual() -> void:
 	
 	cartas_comodo_ate_niveis_atual.shuffle()
 
-# Mostar informacoes
+# Mostar Recursos
 # -----------------------------------------------------------------------------
 
 func _mostrar_recursos_comodos(_carta_pega: CartaRes) -> void:
@@ -141,6 +145,19 @@ func _mostrar_recursos_comodos(_carta_pega: CartaRes) -> void:
 			var qtd := adm_grafo_comodos.get_quantidade(_pos_grid, _recurso)
 			_recurso_qtd[_recurso] = qtd
 		comodo.mostrar_recursos(_recurso_qtd)
+
+func _mostrar_um_recurso(recurso: GerenciadorRecursos.Recurso) -> void:
+	var comodos_ocupados : Array[ComodoBase] = grid_comodos.get_comodos_ocupados()
+	for comodo: ComodoBase in comodos_ocupados:
+		var _pos_grid : Vector2i = comodo.grid_pos
+		var _recurso_qtd : Dictionary[GerenciadorRecursos.Recurso, int] = {}
+		var qtd := adm_grafo_comodos.get_quantidade(_pos_grid, recurso)
+		_recurso_qtd[recurso] = qtd
+		comodo.mostrar_recursos(_recurso_qtd)
+
+
+# Mostar informacoes Carta
+# -----------------------------------------------------------------------------
 
 func _mostar_info_carta(_carta: CartaRes) -> void:
 	info_carta.mostrar(_carta)

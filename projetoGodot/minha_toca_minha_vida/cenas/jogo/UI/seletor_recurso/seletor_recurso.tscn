@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://c13c5uwjx06a1"]
+
+[ext_resource type="Shader" uid="uid://cjgtevb26fyl3" path="res://cenas/jogo/UI/escolha_cartas/ui_canto_redondo.gdshader" id="1_ew10w"]
+[ext_resource type="Script" uid="uid://5t1eguq5o67f" path="res://cenas/jogo/UI/seletor_recurso/seletor_recurso.gd" id="1_tbqyg"]
+[ext_resource type="PackedScene" uid="uid://ddtaxl2d4lovp" path="res://cenas/jogo/UI/seletor_recurso/button_recurso.tscn" id="3_o5tyn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smq05"]
+shader = ExtResource("1_ew10w")
+shader_parameter/radius_top = 16.0
+shader_parameter/radius_bottom = 16.0
+
+[node name="SeletorRecurso" type="Control" unique_id=456758667]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -271.0
+offset_right = 69.0
+grow_vertical = 0
+script = ExtResource("1_tbqyg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1621192226]
+modulate = Color(0, 0, 0, 0.29411766)
+material = SubResource("ShaderMaterial_smq05")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1421333026]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonRecurso" parent="VBoxContainer" unique_id=297871678 instance=ExtResource("3_o5tyn")]
+layout_mode = 2
+
+[node name="ButtonRecurso2" parent="VBoxContainer" unique_id=1158124439 instance=ExtResource("3_o5tyn")]
+layout_mode = 2
+
+[node name="ButtonRecurso3" parent="VBoxContainer" unique_id=313831873 instance=ExtResource("3_o5tyn")]
+layout_mode = 2
+
+[node name="ButtonRecurso4" parent="VBoxContainer" unique_id=1005155031 instance=ExtResource("3_o5tyn")]
+layout_mode = 2
+
+[node name="ButtonRecurso5" parent="VBoxContainer" unique_id=364797004 instance=ExtResource("3_o5tyn")]
+layout_mode = 2
+
+[node name="ButtonRecurso6" parent="VBoxContainer" unique_id=1251903077 instance=ExtResource("3_o5tyn")]
+layout_mode = 2
