@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://cvpmtx7tfd5uf" path="res://cenas/jogo/UI/info_cartas/info_carta.gd" id="1_cf0gj"]
 [ext_resource type="Texture2D" uid="uid://bjwy2c5nqcvo1" path="res://assets/artes/comodos/resized_comodo_quarto.png" id="2_dr6ch"]
 [ext_resource type="Texture2D" uid="uid://bgtcu7prmpoqv" path="res://assets/artes/icones/resized_item_comida.png" id="3_cf0gj"]
+[ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="4_nvjsk"]
 [ext_resource type="PackedScene" uid="uid://5vwist4yl1rk" path="res://cenas/jogo/UI/info_cartas/texture_recurso.tscn" id="4_sjrvp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smq05"]
 shader = ExtResource("1_2tfaf")
 shader_parameter/radius_top = 16.0
 shader_parameter/radius_bottom = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf0gj"]
 
 [node name="InfoCarta" type="Control" unique_id=193280476]
 layout_mode = 3
@@ -53,11 +56,30 @@ layout_mode = 2
 
 [node name="TextureComodo" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=658197975]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cf0gj")
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_dr6ch")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="TextureComodoOutline" type="TextureRect" parent="MarginContainer/HBoxContainer/TextureComodo" unique_id=1140707486]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_cf0gj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -4.0
+offset_right = -35.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_nvjsk")
+expand_mode = 3
+stretch_mode = 6
 
 [node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=877312105]
 layout_mode = 2

@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://5vwist4yl1rk"]
 
+[ext_resource type="Shader" uid="uid://djbtbpl3mh3pl" path="res://cenas/jogo/UI/outline.gdshader" id="1_m7gsb"]
 [ext_resource type="Texture2D" uid="uid://bgtcu7prmpoqv" path="res://assets/artes/icones/resized_item_comida.png" id="1_o1niy"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvjsk"]
+shader = ExtResource("1_m7gsb")
+shader_parameter/outline_width = 0.150000007125
+shader_parameter/outline_tint = Color(1, 1, 1, 1)
+shader_parameter/atlas_region_pos = Vector2(0, 0)
+shader_parameter/atlas_region_size = Vector2(1, 1)
+shader_parameter/draw_size = Vector2(3, 3)
+
 [node name="TextureRecurso" type="TextureRect" unique_id=1669974750]
+material = SubResource("ShaderMaterial_nvjsk")
 texture = ExtResource("1_o1niy")
 expand_mode = 2
 stretch_mode = 5
