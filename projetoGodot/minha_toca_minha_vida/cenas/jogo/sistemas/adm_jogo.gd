@@ -2,6 +2,7 @@ class_name AdmJogo
 extends Node
 
 signal avancou_nivel(novo_nivel: int)
+signal liberou_final
 signal terminou_jogo
 
 const QTD_CARTAS_MAO : int = 4
@@ -140,6 +141,7 @@ func _on_sem_cartas() -> void:
 		# desbloqueia a carta final
 		escolha_cartas.adicionar_carta(carta_comodo_final)
 		carta_final_unlocked = true
+		liberou_final.emit()
 		
 		escolha_cartas.sem_cartas.connect(_end_demo)
 		return
