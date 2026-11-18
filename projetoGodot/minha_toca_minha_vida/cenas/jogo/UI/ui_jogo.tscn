@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ckpuwpe50du0o" path="res://cenas/jogo/UI/escolha_cartas/menu_cartas.tscn" id="2_5hevb"]
 [ext_resource type="PackedScene" uid="uid://ck3ee6pwrs6u3" path="res://cenas/jogo/UI/info_cartas/info_carta.tscn" id="3_s4l40"]
 [ext_resource type="PackedScene" uid="uid://c13c5uwjx06a1" path="res://cenas/jogo/UI/seletor_recurso/seletor_recurso.tscn" id="4_ypvnr"]
+[ext_resource type="Texture2D" uid="uid://b47hvdgjj7efi" path="res://assets/ui/botoes/sair.png" id="5_rsqol"]
+[ext_resource type="Script" uid="uid://disvfnmb6ynmi" path="res://cenas/jogo/UI/button_sair.gd" id="6_5gkso"]
 
 [node name="UI" type="CanvasLayer" unique_id=1303200733]
 
@@ -22,3 +24,20 @@ metadata/_edit_lock_ = true
 [node name="InfoCarta" parent="." unique_id=193280476 instance=ExtResource("3_s4l40")]
 
 [node name="SeletorRecurso" parent="." unique_id=456758667 instance=ExtResource("4_ypvnr")]
+
+[node name="ButtonSair" type="Button" parent="." unique_id=897918261]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -78.0
+offset_right = -12.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("5_rsqol")
+flat = true
+expand_icon = true
+script = ExtResource("6_5gkso")
