@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://bsfhhtfs31n3y"]
 
+[ext_resource type="Shader" uid="uid://djbtbpl3mh3pl" path="res://cenas/jogo/UI/outline.gdshader" id="1_dwkg5"]
 [ext_resource type="Texture2D" uid="uid://c243uodnmib0f" path="res://assets/artes/icones/resized_item_coracao.png" id="1_yktg3"]
 [ext_resource type="Script" uid="uid://dwnslmr1aq7p2" path="res://cenas/jogo/comodos/recurso_img.gd" id="2_kp0ny"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbqyg"]
+shader = ExtResource("1_dwkg5")
+shader_parameter/outline_width = 0.050000002375
+shader_parameter/outline_tint = Color(1, 1, 1, 1)
+shader_parameter/atlas_region_pos = Vector2(0, 0)
+shader_parameter/atlas_region_size = Vector2(1, 1)
+shader_parameter/draw_size = Vector2(1, 1)
+
 [node name="RecursoImagem" type="Sprite2D" unique_id=322687412]
 z_index = 2
+material = SubResource("ShaderMaterial_tbqyg")
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_yktg3")
 script = ExtResource("2_kp0ny")

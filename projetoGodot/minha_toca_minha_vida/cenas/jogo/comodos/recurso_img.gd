@@ -1,6 +1,10 @@
 class_name RecursoImagem
 extends Sprite2D
 
+@export var tween_duracao := 1.2
+@export var tween_rot := PI/8
+@export var tween_trans := Tween.TRANS_CUBIC
+
 const ITEM_COMIDA = preload("uid://bgtcu7prmpoqv")
 const ITEM_CONHECIMENTO = preload("uid://c5dwyi5wdb8ld")
 const ITEM_CORACAO = preload("uid://c243uodnmib0f")
@@ -27,3 +31,15 @@ static func get_texture_recurso(_recurso : GerenciadorRecursos.Recurso) -> Textu
 		GerenciadorRecursos.Recurso.CONHECIMENTO:
 			return ITEM_CONHECIMENTO
 	return null
+
+
+func criar_tween_delay(id: int, max_recursos: int) -> void:
+	var delay := id * (tween_duracao / (max_recursos * 2))
+	await get_tree().create_timer(delay).timeout
+	
+	var tween := create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(tween_trans)
+	tween.tween_property(self, "rotation", -tween_rot, tween_duracao)
+	tween.tween_property(self, "rotation",  tween_rot, tween_duracao)
+	tween.set_loops()

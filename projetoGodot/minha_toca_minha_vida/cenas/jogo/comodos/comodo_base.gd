@@ -76,6 +76,7 @@ func _criar_recursos() -> void:
 		for x in range(MAX_RECURSOS):
 			var _recurso := RECURSO_IMG.instantiate() as RecursoImagem
 			pai_recursos.add_child(_recurso)
+			_recurso.criar_tween_delay(x, MAX_RECURSOS)
 			_recurso.position.y = y * distancia_recursos.y/2
 			_recurso.position.x = (x - 1.5) * distancia_recursos.x 
 			#
