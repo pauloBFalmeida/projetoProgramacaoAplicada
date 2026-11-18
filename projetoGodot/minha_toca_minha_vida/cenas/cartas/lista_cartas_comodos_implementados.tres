@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://d20088pa02txr" path="res://cenas/cartas/comodos/comodo_biblioteca.tres" id="6_dcr4r"]
 [ext_resource type="Resource" uid="uid://dme1w5oir5kme" path="res://cenas/cartas/comodos/comodo_cafeteria.tres" id="7_8vh54"]
 [ext_resource type="Resource" uid="uid://fe88dl7mlhjp" path="res://cenas/cartas/comodos/comodo_escola.tres" id="8_genbq"]
-[ext_resource type="Resource" uid="uid://ex78owbswkt" path="res://cenas/cartas/comodos/comodo_escritorio.tres" id="9_pgco1"]
 [ext_resource type="Resource" uid="uid://d2nst0wiqws11" path="res://cenas/cartas/comodos/comodo_feira.tres" id="10_fl1wa"]
 [ext_resource type="Resource" uid="uid://pb5dhl2gx1kh" path="res://cenas/cartas/comodos/comodo_floricultura.tres" id="11_8qqg5"]
 [ext_resource type="Resource" uid="uid://dhc2fwmqbb7kx" path="res://cenas/cartas/comodos/comodo_horta.tres" id="12_jd16x"]
@@ -22,5 +21,5 @@
 
 [resource]
 script = ExtResource("22_4b8es")
-cartas = Array[ExtResource("1_4ulkb")]([ExtResource("2_w1u7n"), ExtResource("4_41ssy"), ExtResource("5_x2ntb"), ExtResource("6_dcr4r"), ExtResource("7_8vh54"), ExtResource("8_genbq"), ExtResource("9_pgco1"), ExtResource("10_fl1wa"), ExtResource("11_8qqg5"), ExtResource("12_jd16x"), ExtResource("13_hnykd"), ExtResource("14_drmvl"), ExtResource("17_cbbkv"), ExtResource("18_nb6cu"), ExtResource("19_2mn77"), ExtResource("20_ew6pd"), ExtResource("21_qal6u")])
+cartas = Array[ExtResource("1_4ulkb")]([ExtResource("2_w1u7n"), ExtResource("4_41ssy"), ExtResource("5_x2ntb"), ExtResource("6_dcr4r"), ExtResource("7_8vh54"), ExtResource("8_genbq"), ExtResource("10_fl1wa"), ExtResource("11_8qqg5"), ExtResource("12_jd16x"), ExtResource("13_hnykd"), ExtResource("14_drmvl"), ExtResource("17_cbbkv"), ExtResource("18_nb6cu"), ExtResource("19_2mn77"), ExtResource("20_ew6pd"), ExtResource("21_qal6u")])
 metadata/_custom_type_script = "uid://cl8sftvojcmh6"

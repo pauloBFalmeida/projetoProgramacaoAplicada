@@ -1,7 +1,8 @@
 class_name AdmJogo
 extends Node
 
-signal avancou_nivel
+signal avancou_nivel(novo_nivel: int)
+signal terminou_jogo
 
 const QTD_CARTAS_MAO : int = 5
 
@@ -15,6 +16,7 @@ const QTD_CARTAS_MAO : int = 5
 @export_group("Resources")
 @export var lista_cartas_comodos : ListaCartas
 @export var carta_comodo_inicial : CartaRes
+@export var carta_comodo_final : CartaRes
 
 @export_group("Settings")
 ## Quantidade total de cartas no jogo para avancar para o nivel [br]
@@ -33,6 +35,8 @@ var cartas_comodo_por_nivel : Dictionary = {}
 var nivel_atual : int = 0
 ## Quantidade total de cartas colocadas no tabuleiro
 var cartas_colocadas : int = 0
+## Marca se a carta final foi desbloqueada
+var carta_final_unlocked : bool = false
 
 var cartas_comodo_ate_niveis_atual : Array[CartaRes] = []
 var sequencia_cartas_comodo : Array[CartaRes] = []
@@ -54,6 +58,7 @@ func _ready() -> void:
 	seletor_recurso.mostrar_recurso.connect(_mostrar_um_recurso)
 	seletor_recurso.esconder_recurso.connect(grid_comodos.esconder_recursos)
 
+
 func iniciar() -> void:
 	cartas_comodo_por_nivel.clear()
 	for carta_res : CartaRes in lista_cartas_comodos.cartas:
@@ -65,9 +70,6 @@ func iniciar() -> void:
 		cartas_comodo_por_nivel[_nivel].append(carta_res)
 	
 	escolha_cartas.adicionar_carta(carta_comodo_inicial)
-	
-	#for i in QTD_CARTAS_MAO:
-		#escolha_cartas.adicionar_carta(carta_comodo_inicial)
 
 # Ao adicionar uma carta
 # -----------------------------------------------------------------------------
@@ -95,6 +97,13 @@ func _posicionar_comodo(area: Area2D, carta: CartaRes) -> bool:
 func _progredir() -> void:
 	cartas_colocadas += 1
 	
+	if _verificar_fim():
+		if nivel_atual == 4: return
+		
+		nivel_atual = 4
+		avancou_nivel.emit(nivel_atual)
+		return
+	
 	if nivel_por_qtd_cartas.has(cartas_colocadas):
 		_prox_nivel()
 
@@ -104,12 +113,37 @@ func _prox_nivel() -> void:
 	if cartas_comodo_por_nivel.has(nivel_atual):
 		_fill_cartas_ate_nivel_atual()
 	
-	avancou_nivel.emit()
+	avancou_nivel.emit(nivel_atual)
+
+## Retorna true se for o fim de jogo
+func _verificar_fim() -> bool:
+	# nao colocou cartas o suficente
+	if cartas_colocadas < 40:
+		return false
+	
+	
+	
+	return true
+
+
+## Chamado qnd a carta final for colocada
+func _end_demo() -> void:
+	terminou_jogo.emit()
 
 # Sem Cartas
 # -----------------------------------------------------------------------------
 
 func _on_sem_cartas() -> void:
+	if nivel_atual == 4:
+		# a carta ja foi desbloqueada
+		if carta_final_unlocked: return
+		# desbloqueia a carta final
+		escolha_cartas.adicionar_carta(carta_comodo_final)
+		carta_final_unlocked = true
+		
+		escolha_cartas.sem_cartas.connect(_end_demo)
+		return
+	
 	for i in range(QTD_CARTAS_MAO):
 		var _carta : CartaRes = cartas_comodo_ate_niveis_atual.pop_back()
 		
