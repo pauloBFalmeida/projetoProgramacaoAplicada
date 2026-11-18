@@ -10,8 +10,8 @@ imagem = ExtResource("1_jydp8")
 nivel_desbloqueio = 2
 preco_desbloqueio = 2
 recurso_recebido = Dictionary[int, int]({
-0: 1,
-2: 0
+2: 0,
+4: 1
 })
 recurso_gerado = Dictionary[int, int]({
 1: 0,

@@ -11,7 +11,7 @@ nivel_desbloqueio = 2
 preco_desbloqueio = 1
 recurso_recebido = Dictionary[int, int]({
 0: 1,
-2: 0
+4: 0
 })
 recurso_gerado = Dictionary[int, int]({
 4: 2
