@@ -100,9 +100,10 @@ class GrafoComodos:
 		comodos[pos] = nodo
 		# calcula o que ele gera, e adiciona o melhor que cada vizinho gera -1
 		var _recursos: Dictionary[GerenciadorRecursos.Recurso, int] = {}
-		for recurso in carta.recurso_gerado.keys():
+		for recurso in carta.recurso_gerado:
 			var _qtde := carta.recurso_gerado[recurso]
-			_recursos[recurso] = GerenciadorRecursos.get_valor_recurso_gerado(recurso, _qtde)
+			var _valor := GerenciadorRecursos.get_valor_recurso_gerado(recurso, _qtde)
+			_recursos[recurso] = _valor
 		
 		for vizinho_pos in vizinhos_pos(pos):
 			var _vizinho : NodoComodo = comodos[vizinho_pos]

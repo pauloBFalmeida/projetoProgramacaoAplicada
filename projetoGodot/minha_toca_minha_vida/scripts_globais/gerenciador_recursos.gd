@@ -46,6 +46,4 @@ func get_valor_recurso_gerado(_recurso: Recurso, _qtde: Qntd) -> int:
 	return _get_valor_recurso(_recurso, _qtde)
 	
 func _get_valor_recurso(_recurso: Recurso, _qtde: Qntd) -> int:
-	if qntd_para_numero.has(_recurso):
-		return qntd_para_numero[_qtde]
-	return 0
+	return qntd_para_numero.get(_qtde, 0)
