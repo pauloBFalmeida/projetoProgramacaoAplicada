@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bxyr6l60euag6"]
 
-[ext_resource type="Texture2D" uid="uid://f2ycpfpgytml" path="res://assets/ui/buttons/VOLTAR_NORM.png" id="1_n2d3a"]
 [ext_resource type="Script" uid="uid://wrxuvknd54d4" path="res://cenas/menu_inicial/scripts/saves.gd" id="1_o3xdj"]
-[ext_resource type="Texture2D" uid="uid://byle64rntfkd7" path="res://assets/ui/buttons/VOLTAR_DEFORM.png" id="2_o3xdj"]
+[ext_resource type="Texture2D" uid="uid://cullh5cacya5g" path="res://assets/ui/botoes/voltar.png" id="2_v83ev"]
+[ext_resource type="Texture2D" uid="uid://cbkfwqk8e6cf4" path="res://assets/ui/botoes_pressed/voltar_p.png" id="3_px4hg"]
+[ext_resource type="Texture2D" uid="uid://c1thkjlwauiks" path="res://assets/ui/botoes_hover/voltar_h.png" id="4_0r7je"]
 
 [sub_resource type="Theme" id="Theme_knqa7"]
 default_font_size = 40
@@ -108,10 +109,10 @@ offset_right = 193.25073
 offset_bottom = -27.16504
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("1_n2d3a")
-texture_pressed = ExtResource("2_o3xdj")
-texture_hover = ExtResource("2_o3xdj")
-texture_focused = ExtResource("2_o3xdj")
+texture_normal = ExtResource("2_v83ev")
+texture_pressed = ExtResource("3_px4hg")
+texture_hover = ExtResource("4_0r7je")
+texture_focused = ExtResource("4_0r7je")
 stretch_mode = 5
 
 [node name="ConfirmDelete" type="ConfirmationDialog" parent="." unique_id=1713882886]

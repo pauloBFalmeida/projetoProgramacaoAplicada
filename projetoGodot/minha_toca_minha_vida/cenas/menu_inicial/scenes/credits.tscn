@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dm7k0lt1xsmp5"]
 
 [ext_resource type="Script" uid="uid://bt7yo8yyqd3w5" path="res://cenas/menu_inicial/scripts/credits.gd" id="1_0ctdu"]
-[ext_resource type="Texture2D" uid="uid://f2ycpfpgytml" path="res://assets/ui/buttons/VOLTAR_NORM.png" id="2_2fbfq"]
-[ext_resource type="Texture2D" uid="uid://byle64rntfkd7" path="res://assets/ui/buttons/VOLTAR_DEFORM.png" id="3_8gwij"]
+[ext_resource type="Texture2D" uid="uid://cullh5cacya5g" path="res://assets/ui/botoes/voltar.png" id="2_h6acu"]
+[ext_resource type="Texture2D" uid="uid://cbkfwqk8e6cf4" path="res://assets/ui/botoes_pressed/voltar_p.png" id="3_l0euu"]
+[ext_resource type="Texture2D" uid="uid://c1thkjlwauiks" path="res://assets/ui/botoes_hover/voltar_h.png" id="4_j5kd6"]
 
 [node name="Credits" type="Control" unique_id=1247317432]
 layout_mode = 3
@@ -101,10 +102,10 @@ offset_right = 200.0
 offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_2fbfq")
-texture_pressed = ExtResource("3_8gwij")
-texture_hover = ExtResource("3_8gwij")
-texture_focused = ExtResource("3_8gwij")
+texture_normal = ExtResource("2_h6acu")
+texture_pressed = ExtResource("3_l0euu")
+texture_hover = ExtResource("4_j5kd6")
+texture_focused = ExtResource("4_j5kd6")
 stretch_mode = 5
 
 [connection signal="pressed" from="BtnVoltar" to="." method="_on_btn_voltar_pressed"]
