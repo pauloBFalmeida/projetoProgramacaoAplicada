@@ -1,1 +1,8 @@
-Level 1
+join char_patricinha right
+char_patricinha: Boa! Quando você coloca um cômodo, as posições vizinhas livres ficam disponíveis para continuar expandindo.
+leave char_patricinha
+join char_cientista right
+char_cientista: Os recursos também se espalham pelos cômodos vizinhos, perdendo força a cada cômodo de distância.
+char_cientista: Alguns cômodos precisam de certos recursos por perto para satisfazerem os moradores.
+char_cientista: Antes de escolher uma carta, clique nela para ver os detalhes do cômodo.
+char_cientista: Ao segurar uma carta, olhe os indicadores sobre os cômodos já colocados para ver o que está sendo exigido e acompanhe a satisfação da toca.

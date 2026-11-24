@@ -1,5 +1,8 @@
 extends Node
 
+## Tempo que tem que ficar clicado para considerar pressionado 
+var pressionar_time := 0.2
+
 # Valores padrão das configurações
 var volume_master: float = 1.0
 var volume_music: float = 1.0

@@ -58,6 +58,8 @@ func _ready() -> void:
 	
 	seletor_recurso.mostrar_recurso.connect(_mostrar_um_recurso)
 	seletor_recurso.esconder_recurso.connect(grid_comodos.esconder_recursos)
+	
+	adm_grafo_comodos.grafo.atualizado.connect(atualizar_receber)
 
 
 func iniciar() -> void:
@@ -116,13 +118,18 @@ func _prox_nivel() -> void:
 	
 	avancou_nivel.emit(nivel_atual)
 
+# Verificar final
+# -----------------------------------------------------------------------------
+
 ## Retorna true se for o fim de jogo
 func _verificar_fim() -> bool:
 	# nao colocou cartas o suficente
 	if cartas_colocadas < 40:
 		return false
 	
-	
+	# nao tem 30 comodos satisfeitos
+	if grid_comodos.get_comodos_satisfeitos().size() < 30:
+		return false
 	
 	return true
 
@@ -130,6 +137,14 @@ func _verificar_fim() -> bool:
 ## Chamado qnd a carta final for colocada
 func _end_demo() -> void:
 	terminou_jogo.emit()
+
+func atualizar_receber() -> void:
+	await get_tree().process_frame
+	var comodos_ocupados : Array[ComodoBase] = grid_comodos.get_comodos_ocupados()
+	for comodo: ComodoBase in comodos_ocupados:
+		if not comodo.satisfeito:
+			if adm_grafo_comodos.is_comodo_satisfeito(comodo.grid_pos):
+				comodo.deixar_satisfeito()
 
 # Sem Cartas
 # -----------------------------------------------------------------------------

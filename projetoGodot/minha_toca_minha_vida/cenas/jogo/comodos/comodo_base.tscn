@@ -3,9 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://dgdmnr2vhr7hl" path="res://assets/artes/comodos/resized_comodo_alquimia.png" id="1_oon6u"]
 [ext_resource type="Script" uid="uid://pdt3mmmyjx4r" path="res://cenas/jogo/comodos/comodo_base.gd" id="1_w7gib"]
 [ext_resource type="Texture2D" uid="uid://b0w4qbk321ky2" path="res://_debug/tempo_assets/tile_branco.png" id="2_ii1wo"]
+[ext_resource type="Shader" uid="uid://djbtbpl3mh3pl" path="res://cenas/jogo/UI/outline.gdshader" id="4_bo18p"]
+[ext_resource type="Texture2D" uid="uid://cvbm1gfxkoqb0" path="res://assets/artes/icones/resized_item_estrela.png" id="5_vkypo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smq05"]
 size = Vector2(198, 188)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0483k"]
+shader = ExtResource("4_bo18p")
+shader_parameter/outline_width = 0.030000001425
+shader_parameter/outline_tint = Color(1, 0.982, 0.64, 1)
+shader_parameter/atlas_region_pos = Vector2(0, 0)
+shader_parameter/atlas_region_size = Vector2(1, 1)
+shader_parameter/draw_size = Vector2(1, 1)
 
 [node name="ComodoBase" type="Node2D" unique_id=1038744729]
 script = ExtResource("1_w7gib")
@@ -27,5 +37,14 @@ collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=776907859]
 shape = SubResource("RectangleShape2D_smq05")
+
+[node name="ResizedItemEstrela" type="Sprite2D" parent="." unique_id=162034666]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_0483k")
+position = Vector2(-77, -73)
+rotation = -0.2994378
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_vkypo")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

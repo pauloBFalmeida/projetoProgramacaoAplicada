@@ -7,18 +7,22 @@ func colocar_comodo(carta_comodo: CartaRes, pos: Vector2i) -> void:
 	if grafo.comodos.has(pos): return
 	grafo.colocar(pos, carta_comodo)
 
-# TODO: TESTES SOMENTE
-func _ready() -> void:
-	grafo.atualizado.connect(_on_grafo_atualizado)
-
-func _on_grafo_atualizado() -> void:
-	pass
-	#print("--------------------------")
-	#for pos in grafo.comodos:
-		#print(pos, " Moradia=", grafo.quantidade(pos, GerenciadorRecursos.Recurso.MORADIA))
-
 func get_quantidade(pos_grid: Vector2i, recurso: GerenciadorRecursos.Recurso) -> int:
 	return grafo.quantidade(pos_grid, recurso)
+
+#func get_recursos_comodo(pos_grid: Vector2i) -> Dictionary[GerenciadorRecursos.Recurso, int]:
+	#var _recursos : Dictionary[GerenciadorRecursos.Recurso, int] = {}
+	#for recurso in GerenciadorRecursos.Recurso.values():
+		#_recursos[recurso] = grafo.quantidade(pos_grid, recurso)
+	#return _recursos
+
+## Retorna se o nodo comodo na posicao passada esta satisfeito
+func is_comodo_satisfeito(pos_grid: Vector2i) -> bool:
+	var nodo_comodo := grafo.get_nodo_comodo(pos_grid)
+	if nodo_comodo:
+		return nodo_comodo.is_satisfeito()
+	
+	return false
 
 # Nodo Comodo
 # -----------------------------------------------------------------------------
@@ -58,6 +62,16 @@ class NodoComodo:
 		qtd_recursos[recurso] = valor
 		return true
 	
+	## Retorna False, se algum recurso que deve ser recebido, 
+	## esta atualmente esta recebendo menos do que o esperado
+	func is_satisfeito() -> bool:
+		for recurso : GerenciadorRecursos.Recurso in carta.recurso_recebido:
+			var qntd : GerenciadorRecursos.Qntd = carta.recurso_recebido[recurso]
+			var valor_esperado_receber : int = GerenciadorRecursos.get_valor_recurso_recebido(recurso, qntd)
+			if quantidade(recurso) < valor_esperado_receber:
+				return false
+		return true
+	
 	func emitir_alterado() -> void:
 		alterado.emit()
 
@@ -77,7 +91,11 @@ class GrafoComodos:
 
 	## NodoComodos por posicao na grid
 	var comodos: Dictionary[Vector2i, NodoComodo] = {}
-
+	
+	
+	func get_nodo_comodo(pos: Vector2i) -> NodoComodo:
+		return comodos.get(pos, null)
+	
 	## Retorna a quantidade de um Recurso em uma posicao da grid
 	func quantidade(pos: Vector2i, recurso: GerenciadorRecursos.Recurso) -> int:
 		# se nao tiver, retorne 0

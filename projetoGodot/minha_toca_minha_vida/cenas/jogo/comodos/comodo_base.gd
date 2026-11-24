@@ -9,18 +9,23 @@ const distancia_recursos := Vector2(45.0, 50.0)
 const RECURSO_IMG = preload("uid://bsfhhtfs31n3y")
 const MAX_RECURSOS := 4
 
+@onready var item_estrela: Sprite2D = $ResizedItemEstrela
+
 var pai_recursos : Node2D
 var recursos_imgs_por_linha : Dictionary[int, Array]
 
 var grid_pos : Vector2i
+
 var ocupado : bool = false
 var disponivel : bool = false
+var satisfeito : bool = false
 
 var tween_piscar : Tween
 
 func _ready() -> void:
 	esconder()
 	_criar_recursos()
+	item_estrela.hide()
 	#name = "ComodoBase(%d, %d)" % [grid_pos.x, grid_pos.y]
 
 ## Mostra a borda piscando (posicao disponivel para receber um comodo)
@@ -105,3 +110,19 @@ func mostrar_recursos(recursos_qtd: Dictionary[GerenciadorRecursos.Recurso, int]
 			_recurso_img.set_recurso(_recurso)
 	
 	pai_recursos.show()
+
+func deixar_satisfeito() -> void:
+	if satisfeito: return
+	satisfeito = true
+	
+	item_estrela.show()
+	
+	var tween_scale := create_tween()
+	tween_scale.set_ease(Tween.EASE_OUT)
+	tween_scale.set_trans(Tween.TRANS_ELASTIC)
+	tween_scale.tween_property(item_estrela, "scale", item_estrela.scale, 0.6).from(Vector2.ZERO)
+	
+	var tween_rot := create_tween()
+	tween_rot.set_ease(Tween.EASE_OUT)
+	tween_rot.set_trans(Tween.TRANS_CUBIC)
+	tween_rot.tween_property(item_estrela, "rotation", item_estrela.rotation, 0.5).from(0.0)

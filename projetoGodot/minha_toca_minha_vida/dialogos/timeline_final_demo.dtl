@@ -1,1 +1,5 @@
+join char_patricinha right
+char_patricinha: E é aqui que chegamos por enquanto.\
+Veja como ficou a sua organização até aqui.
+leave char_patricinha
 Fim da DEMO!

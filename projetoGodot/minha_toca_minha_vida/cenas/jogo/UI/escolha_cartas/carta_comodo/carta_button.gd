@@ -5,7 +5,7 @@ signal clicado_rapido
 signal esta_segurado
 
 ## Tempo que tem que segurar para considerar pega em segundos
-@export var tempo_click_pegar := 0.12
+var tempo_click_pegar := Config.pressionar_time
 
 @export var texture_rect_comodo: TextureRect
 @export var texture_rect_shader: TextureRect

@@ -58,6 +58,9 @@ func disponibilizar_vizinhos(comodo : ComodoBase) -> void:
 func get_comodos_ocupados() -> Array[ComodoBase]:
 	return comodos_por_pos.values().filter(func(comodo: ComodoBase): return comodo.ocupado)
 
+func get_comodos_satisfeitos() -> Array[ComodoBase]:
+	return comodos_por_pos.values().filter(func(comodo: ComodoBase): return comodo.satisfeito)
+
 # Posicoes de comodos disponiveis
 # -----------------------------------------------------------------------------
 

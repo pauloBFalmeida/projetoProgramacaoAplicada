@@ -28,6 +28,9 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"char_alquimista": "res://dialogos/characters/char_alquimista.dch",
+"char_cientista": "res://dialogos/characters/char_cientista.dch",
+"char_construtor": "res://dialogos/characters/char_construtor.dch",
 "char_patricinha": "res://dialogos/characters/char_patricinha.dch"
 }
 directories/dtl_directory={
